@@ -1,0 +1,10 @@
+@import url( 'main.css' );
+
+body {
+	padding:10px;
+	background:#fff;
+}
+
+.content{
+	padding:10px;
+}
