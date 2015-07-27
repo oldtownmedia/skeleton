@@ -1,4 +1,4 @@
-# skeleton
+# Skeleton
 
 This is our boilerplate theme for all internal projects at Old Town Media. It's simple, easy, and easily modifiable. Use it in your own themes or fork it and modify it how you please!
 
