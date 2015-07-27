@@ -11,6 +11,8 @@
 
         </div>
     </footer>
+    
+</div> <!-- End site-container -->
 
 <?php
 	wp_footer();

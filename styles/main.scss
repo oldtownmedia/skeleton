@@ -13,6 +13,18 @@
 		}
 	}
 
+	@mixin wrapper($wrapper: 1170px){
+		max-width: $wrapper;
+		margin: auto;
+	}
+
+// Default Classes
+
+	.wrapper{
+		@include wrapper;
+	}
+
+
 @import 'sass/_normalize.scss',
 		'sass/_burger.scss';
 

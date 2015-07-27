@@ -20,35 +20,39 @@
 
 <body <?php body_class(); ?>>
 
-    <header>
+  <div class="site-container">
+
+    <header class="site-header">
 
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
 
-            <a itemprop="url" href="<?php echo site_url(); ?>"><img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo('name') ?>"></a>
+            <a itemprop="url" href="<?php echo site_url(); ?>">
+              <img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo('name') ?>">
+            </a>
 
         </div>
 
+        <nav>
+          <div class="nav">
+
+            <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
+          </div>
+        </nav>
+
     </header>
 
-	<a id="menu-toggle" href="#mobile-nav" class="nav-icon button trigger"><span>Menu</span></a>
+  	<a id="menu-toggle" href="#mobile-nav" class="nav-icon button trigger"><span>Menu</span></a>
 
-	<nav>
-		<div class="nav">
+  	<div class="banner">
 
-			<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+  		<?php if ( is_front_page() ){
+  			if ( function_exists( 'soliloquy' ) ) { soliloquy( '25' ); }
+  		} else {
+  			if ( get_the_post_thumbnail() != '' && !is_single() ){
+  	        	the_post_thumbnail();
+  	        }
+  		}
+  		?>
 
-		</div>
-	</nav>
-
-	<div class="banner">
-
-		<?php if ( is_front_page() ){
-			if ( function_exists( 'soliloquy' ) ) { soliloquy( '25' ); }
-		} else {
-			if ( get_the_post_thumbnail() != '' && !is_single() ){
-	        	the_post_thumbnail();
-	        }
-		}
-		?>
-
-	</div>
+  	</div>
