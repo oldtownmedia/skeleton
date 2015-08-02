@@ -17,7 +17,7 @@ hgroup,
 main,
 nav,
 section,
-summary {
+summary{
     display: block;
 }
 
@@ -27,7 +27,7 @@ summary {
 
 audio,
 canvas,
-video {
+video{
     display: inline-block;
 }
 
@@ -36,7 +36,7 @@ video {
  * Remove excess height in iOS 5 devices.
  */
 
-audio:not([controls]) {
+audio:not([controls]){
     display: none;
     height: 0;
 }
@@ -52,7 +52,7 @@ audio:not([controls]) {
  *    user zoom.
  */
 
-html {
+html{
     font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -62,7 +62,7 @@ html {
  * Remove default margin.
  */
 
-body {
+body{
     margin: 0;
 }
 
@@ -70,7 +70,7 @@ body {
  * Corrects all elements to proper box-sizing
  */
 
-*, *:before, *:after {
+*, *:before, *:after{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -85,7 +85,7 @@ body {
  * Remove the gray background color from active links in IE 10.
  */
 
-a {
+a{
     background: transparent;
 }
 
@@ -93,7 +93,7 @@ a {
  * Address `outline` inconsistency between Chrome and other browsers.
  */
 
-a:focus {
+a:focus{
     outline: thin dotted;
 }
 
@@ -102,7 +102,7 @@ a:focus {
  */
 
 a:active,
-a:hover {
+a:hover{
     outline: 0;
 }
 
@@ -116,7 +116,7 @@ a:hover {
  * contexts in Firefox 4+, Safari 5, and Chrome.
  */
 
-h1 {
+h1{
     font-size: 2em;
 }
 
@@ -125,7 +125,7 @@ h1 {
  */
 
 b,
-strong {
+strong{
     font-weight: bold;
 }
 
@@ -136,7 +136,7 @@ strong {
 code,
 kbd,
 pre,
-samp {
+samp{
     font-family: monospace, serif;
     font-size: 1em;
 }
@@ -145,7 +145,7 @@ samp {
  * Improve readability of pre-formatted text in all browsers.
  */
 
-pre {
+pre{
     white-space: pre-wrap;
 }
 
@@ -161,7 +161,7 @@ q{
  * Address inconsistent and variable font size in all browsers.
  */
 
-small {
+small{
     font-size: 80%;
 }
 
@@ -170,18 +170,18 @@ small {
  */
 
 sub,
-sup {
+sup{
     font-size: 75%;
     line-height: 0;
     position: relative;
     vertical-align: baseline;
 }
 
-sup {
+sup{
     top: -0.5em;
 }
 
-sub {
+sub{
     bottom: -0.25em;
 }
 
@@ -194,7 +194,7 @@ sub {
  * Corrects margin displayed oddly in IE6/7
  */
 
-form {
+form{
     margin: 0;
 }
 
@@ -202,7 +202,7 @@ form {
  * Define consistent border, margin, and padding.
  */
 
-fieldset {
+fieldset{
     border: 1px solid #c0c0c0;
     margin: 0 2px;
     padding: 0.35em 0.625em 0.75em;
@@ -217,7 +217,7 @@ fieldset {
 button,
 input,
 select,
-textarea {
+textarea{
     font-family: inherit; /* 1 */
     font-size: 100%; /* 2 */
     margin: 0; /* 3 */
@@ -229,7 +229,7 @@ textarea {
  */
 
 button,
-input {
+input{
     line-height: normal;
 }
 
@@ -238,7 +238,7 @@ input {
  */
 
 button[disabled],
-html input[disabled] {
+html input[disabled]{
     cursor: default;
 }
 
@@ -248,7 +248,7 @@ html input[disabled] {
  *    (include `-moz` to future-proof).
  */
 
-input[type="search"] {
+input[type="search"]{
     -webkit-appearance: textfield; /* 1 */
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box; /* 2 */
@@ -261,7 +261,7 @@ input[type="search"] {
  */
 
 input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-decoration{
     -webkit-appearance: none;
 }
 
@@ -270,7 +270,7 @@ input[type="search"]::-webkit-search-decoration {
  */
 
 button::-moz-focus-inner,
-input::-moz-focus-inner {
+input::-moz-focus-inner{
     border: 0;
     padding: 0;
 }
@@ -280,7 +280,7 @@ input::-moz-focus-inner {
  * 2. Improve readability and alignment in all browsers.
  */
 
-textarea {
+textarea{
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
 }
@@ -290,24 +290,24 @@ textarea {
    Typographic Elements
    ========================================================================== */
 
-body  {
-	text-rendering:optimizeLegibility;
-	-webkit-font-smoothing:antialiased;
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	line-height: 1;
 }
 
 input, button{
-	-webkit-font-smoothing:antialiased;
+	-webkit-font-smoothing: antialiased;
 }
 
-p {
-	margin:10px 0;
+p{
+	margin: 10px 0;
 }
 
-h1, h2, h3, h4, h5 {
-	font-weight:300;
-	margin:.3em 0;
+h1, h2, h3, h4, h5{
+	font-weight: 300;
+	margin: .3em 0;
 }
 
 /* Removes link underline from links */
@@ -323,51 +323,56 @@ a{
 /* Fluid Images */
 
 img{
-	*width:inherit;
-	max-width:100%;
-	height:auto;
+	*width: inherit;
+	max-width: 100%;
+	height: auto;
 	border: 0;
 }
 
+/* Easier color transition for links */
+
 a{
-	-webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
 /* Clear after container */
 
-.header:after, .nav:after, .content:after, .footer:after, .group:after, .flex:after {
-	content:"";
-	display:table;
-	clear:both;
+.header:after,
+.nav:after,
+.content:after,
+.footer:after,
+.group:after{
+	content: "";
+	display: table;
+	clear: both;
 }
 
-/* Flexbox Standard */
+/* Flexbox Default */
 
 .flex{
 	display: flex;
 	align-items: center;
 
 	.box{
-		flex: 1 1 auto;
+		flex: 0 1 auto;
 		transition: all 0.2s ease;
 		float:left \9;
 
 		&:last-of-type{
-			float:right \9;
+			float: right \9;
 		}
 	}
 }
 
-@-moz-document url-prefix() {
+/* Moz Flex Fixes */
+
+@-moz-document url-prefix(){
     .flex{
-        justify-content:space-between;
+        justify-content: space-between;
 
         .box:last-of-type{
-	        align-self:flex-end;
-	        float:right;
+	        align-self: flex-end;
+	        float: right;
         }
     }
 }
@@ -375,39 +380,40 @@ a{
 /* WordPress Specific Styles */
 
 .alignleft{
-	float:left;
-	margin-right:10px;
-	margin-bottom:5px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 5px;
 }
 
 .alignright{
-	float:right;
-	margin-left:10px;
-	margin-bottom:5px;
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 5px;
 }
 
 .aligncenter{
-	display:block;
-    margin:5px auto;
+	display: block;
+    margin: 5px auto;
 }
 
-.wp-caption {
-    background:#fff;
-    border:1px solid #cccccc;
-    max-width:96%; /* Image does not overflow the content area */
-    padding:5px 3px 10px;
-    text-align:center;
+.wp-caption{
+    background: #fff;
+    border: 1px solid #cccccc;
+    max-width: 96%;
+    padding: 5px 3px 10px;
+    text-align: center;
 }
 
-.wp-caption-text, .gallery-caption{
-    font-size:12px;
-    line-height:1.5em;
-    margin:0;
-    padding:0 4px 5px;
+.wp-caption-text,
+.gallery-caption{
+    font-size: 12px;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0 4px 5px;
 }
 
 .sticky{
-	background:#f8f8f8;
+	background: #f8f8f8;
 }
 
 /* END EXTRA RESET */
