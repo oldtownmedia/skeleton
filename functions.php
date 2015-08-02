@@ -268,7 +268,7 @@ class DefaultFunctions{
 
 		// Add a page number if necessary.
 		if ( $paged >= 2 || $page >= 2 ){
-			$title = sprintf( __( 'Page %s', 'mayer' ), max( $paged, $page ) ) . " $sep $title";
+			$title = sprintf( __( 'Page %s', 'otm-skeleton' ), max( $paged, $page ) ) . " $sep $title";
 		} // end if
 
 		return $title;
