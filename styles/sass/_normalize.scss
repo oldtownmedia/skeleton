@@ -347,33 +347,11 @@ a{
 	clear: both;
 }
 
-/* Flexbox Default */
-
-.flex{
-	display: flex;
-	align-items: center;
-
-	.box{
-		flex: 0 1 auto;
-		transition: all 0.2s ease;
-		float:left \9;
-
-		&:last-of-type{
-			float: right \9;
-		}
-	}
-}
-
 /* Moz Flex Fixes */
 
 @-moz-document url-prefix(){
     .flex{
         justify-content: space-between;
-
-        .box:last-of-type{
-	        align-self: flex-end;
-	        float: right;
-        }
     }
 }
 

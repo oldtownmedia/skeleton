@@ -1,0 +1,4 @@
+/* TEAM */
+	Developer: Old Town Media
+	Contact:   sales@oldtownmediainc.com
+	URI:       www.oldtownmediainc.com

@@ -1,3 +1,7 @@
+/**********************\
+  Clean up login page
+\**********************/
+
 /* Page background image */
 body.login{
     background: url("../images/bg.jpg") !important;
@@ -14,7 +18,8 @@ body.login{
 }
 
 /* Color of text below form */
-.login #nav a, .login #backtoblog a{
+.login #nav a,
+.login #backtoblog a{
     color: #1a3c33 !important;
     text-shadow: none !important;
 }

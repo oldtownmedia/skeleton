@@ -1,5 +1,4 @@
 <?php
-defined( 'ABSPATH' ) OR exit;
 
 /**
  * Default Functions

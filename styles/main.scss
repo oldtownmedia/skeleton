@@ -1,10 +1,21 @@
-// Definitions
+/**********************\
+	  Definitions
+\**********************/
+
+	// Fonts
+
+	// Colors
 
 	// Forms
 	$label-color: #000000;
 	$label-font: $aFont;
 	$field-color: #000000;
 	$field-font: $aFont;
+
+	// Breakpoints
+	$tablet: 700px;
+	$mid-width: 900px;
+	$full-width: 1170px;
 
 // Mixins
 
@@ -14,22 +25,50 @@
 		}
 	}
 
-	@mixin wrapper($wrapper: 1170px){
+	@mixin wrapper( $wrapper: 1170px ){
 		max-width: $wrapper;
 		margin: auto;
 	}
 
-// Default Classes
-
-	.wrapper{
-		@include wrapper;
-	}
-
-
 @import 'sass/_normalize.scss',
 		'sass/_burger.scss';
 
-// Styles here
+/**********************\
+	Default Globals
+\**********************/
 
-@import 'sass/_forms.scss',
+body{
+
+}
+
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+
+}
+
+h4{
+
+}
+
+a{
+
+}
+
+.button{
+
+}
+
+.wrapper{
+	@include wrapper;
+}
+
+@import 'sass/_cpts.scss',
+		'sass/_forms.scss',
 		'sass/_print.scss';
