@@ -1,0 +1,248 @@
+/**********************\
+	   Main Menu
+\**********************/
+
+$nav-height: 50px;
+$nav-font: $aFont;
+$nav-color: #fff;
+$nav-bkg: $aColor;
+$hover-color: $aColor;
+$hover-bkg: $aColor;
+
+.nav{
+	display: none;
+}
+
+	@include mq( $tablet ){
+
+		.nav{
+			display: block;
+			height: $nav-height;
+			transition: all 0.4s ease-in-out;
+			position: relative;
+			z-index: 95;
+			background-color: $nav-bkg;
+
+			&>ul{
+				text-align: center;
+				margin: 0;
+				padding: 0;
+
+				&>li{
+					line-height: $nav-height;
+					display: inline-block;
+					color: $nav-color;
+					position: relative;
+					text-transform: uppercase;
+					font: 400 18px $nav-font;
+
+					// Keep our last few nav items from aligning the dropdowns
+					// to the left
+					&:nth-last-of-type(3) ~ li{
+						ul{
+							left: auto;
+							right: 0;
+						}
+					}
+
+					// Default no-click class
+					&.noclick>a{
+						pointer-events: none;
+					}
+
+					a{
+						padding: 0 10px;
+						display: block;
+						color: $nav-color;
+					}
+
+					&:hover,
+					&.current-menu-item{
+						background-color: $hover-bkg;
+
+						a{
+							color: $hover-color;
+						}
+
+						ul a{
+							color: $nav-color;
+						}
+					}
+
+					&:hover>ul{
+						visibility: visible;
+						opacity: 1;
+					}
+
+					&>ul{
+						visibility: hidden;
+						opacity: 0;
+						position: absolute;
+						min-width: 200px;
+						top: 100%;
+						margin: 0;
+						padding: 5px 0;
+						background: $hover-bkg;
+
+						li{
+							width: 100%;
+		    				white-space: nowrap;
+		    				list-style-type: none;
+		    				color: #ffffff;
+		    				padding: 0 12px;
+		    				text-align: left;
+							line-height: 1em;
+							position: relative;
+
+							&:hover{
+								background-color: $blue;
+
+								a{
+									color: #fff;
+								}
+							}
+
+							ul{
+								top: 0;
+								left: 100%;
+								position: absolute;
+								visibility: hidden;
+								opacity: 0;
+								padding: 0;
+								margin: 0;
+								background: $hover-bkg;
+								text-align: left;
+								min-width: 200px;
+							}
+
+							&:hover ul{
+								opacity: 1;
+								visibility: visible;
+							}
+
+							a{
+								display: inline-block;
+								padding: 13px 5px;
+								width: 80%;
+								color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+/**********************\
+	  Mobile Menu
+\**********************/
+
+.click-toggle-menu-off{
+	display: none;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	opacity: 0;
+	background: #fff;
+	z-index: 99;
+}
+
+.offcanvas-nav{
+	position: fixed;
+	top: 0px;
+	left: -300px;
+	// right -300px;
+	width: 300px;
+	height: 100%;
+	z-index: 100;
+	background-color: $nav-bkg;
+	transition: all 0.5s ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+
+	ul{
+		margin: 0;
+		padding: 0;
+		transition: all 0.5s ease-in-out;
+		text-align: center;
+
+		li{
+			margin: 0;
+			font: 300 25px/1 $nav-font;
+			list-style-type: none;
+
+			a{
+				display: block;
+				color: $nav-color;
+				text-transform: uppercase;
+				font-size: 1.2em;
+				padding: 15px;
+			}
+
+			ul{
+				display: none;
+				height: 100%;
+				width: 100%;
+
+				&.open{
+					left: 0;
+				}
+
+				li{
+					line-height: .6em;
+
+					a{
+						font-size: .6em;
+					}
+				}
+			}
+
+			&:hover{
+				background-color: $hover-bkg;
+			}
+		}
+	}
+}
+
+	@include mq( $tablet ){
+		.click-toggle-menu-off,
+		.offcanvas-nav{
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+
+/**********************\
+   Mobile Menu Trigger
+\**********************/
+
+body{
+	transition: all 0.4s ease-in-out;
+
+	&.menu-shown{
+
+		.trigger{
+			left: 300px;
+
+			span{
+				@include burger-to-cross;
+			}
+		}
+
+		.offcanvas-nav{
+			left: 0;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.click-toggle-menu-off{
+			display: block;
+			visibility: visible;
+			opacity: .4;
+		}
+	}
+}

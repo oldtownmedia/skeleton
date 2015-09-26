@@ -69,6 +69,7 @@ a{
 	@include wrapper;
 }
 
-@import 'sass/_cpts.scss',
+@import 'sass/_menus.scss',
+		'sass/_cpts.scss',
 		'sass/_forms.scss',
 		'sass/_print.scss';
