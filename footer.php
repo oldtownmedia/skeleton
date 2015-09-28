@@ -11,8 +11,18 @@
 
         </div>
     </footer>
-    
+
 </div> <!-- End site-container -->
+
+<div class="click-toggle-menu-off"></div>
+<div class="offcanvas-nav">
+
+	<?php
+		wp_nav_menu( array( 'theme_location' => 'header-menu' ) );
+	?>
+
+</div>
+
 
 <?php
 	wp_footer();

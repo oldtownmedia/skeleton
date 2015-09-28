@@ -6,7 +6,7 @@ $nav-height: 50px;
 $nav-font: $aFont;
 $nav-color: #fff;
 $nav-bkg: $aColor;
-$hover-color: $aColor;
+$hover-color: $nav-color;
 $hover-bkg: $aColor;
 
 .nav{
@@ -42,6 +42,11 @@ $hover-bkg: $aColor;
 						ul{
 							left: auto;
 							right: 0;
+
+							ul{
+								left: auto;
+								right: 100%;
+							}
 						}
 					}
 
@@ -209,7 +214,8 @@ $hover-bkg: $aColor;
 
 	@include mq( $tablet ){
 		.click-toggle-menu-off,
-		.offcanvas-nav{
+		.offcanvas-nav,
+		.trigger{
 			display: none;
 			visibility: hidden;
 			opacity: 0;
@@ -219,6 +225,15 @@ $hover-bkg: $aColor;
 /**********************\
    Mobile Menu Trigger
 \**********************/
+
+.trigger{
+	background-color: $nav-bkg;
+	padding: 5px;
+
+	span{
+		@include burger( 25px, 3px, 5px, #fff );
+	}
+}
 
 body{
 	transition: all 0.4s ease-in-out;
