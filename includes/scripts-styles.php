@@ -30,7 +30,7 @@ function otm_google_web_fonts(){
 function load_styles(){
 
     wp_register_style( 'style', get_template_directory_uri() . '/styles/main.css', array(), '', 'all' );
-    wp_register_style( 'fonts', $this->otm_google_web_fonts(), array(), '1', 'all' );
+    wp_register_style( 'fonts', recent-posts-views/otm_google_web_fonts(), array(), '1', 'all' );
 
     wp_enqueue_style( 'style' );
     wp_enqueue_style( 'fonts' );
@@ -44,7 +44,7 @@ function load_styles(){
 function editor_styles(){
 
 	add_editor_style( get_template_directory_uri() . '/styles/editor-styles.css' );
-    add_editor_style( $this->otm_google_web_fonts() );
+    add_editor_style( recent-posts-views/otm_google_web_fonts() );
 
 }
 
