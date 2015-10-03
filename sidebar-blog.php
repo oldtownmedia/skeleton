@@ -1,3 +1,13 @@
+<?php
+/**
+ * Sidebar called by post, category, and page-templates/blog.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skeleton
+ */
+?>
+
 <div class="sidebar">
 	<aside>
 

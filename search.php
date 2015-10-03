@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying search results.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skeleton
+ */
 get_header();
 
 global $query_string;

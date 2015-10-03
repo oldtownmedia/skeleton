@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying looped posts.
+ *
+ * Used in archive, search, page-templates/blog
+ *
+ * @package skeleton
+ */
 
 echo "<article class='blog'>";
 

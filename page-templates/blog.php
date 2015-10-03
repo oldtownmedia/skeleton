@@ -1,6 +1,9 @@
 <?php
 /*
-Template Name: Blog
+ * Template Name: Blog
+ *
+ * Template for looping through the blog posts (alternative to using the posts
+ * for greater control).
 */
 
 get_header(); ?>

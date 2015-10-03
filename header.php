@@ -1,9 +1,17 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The template for displaying the site header.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package skeleton
+ */
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 
@@ -11,10 +19,6 @@
 <link href="<?php echo get_template_directory_uri(); ?>/favicon.ico" rel="shortcut icon">
 
 <?php wp_head() ?>
-
-<!--[if lt IE 9]>
-	<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/styles/ie8.css" />
-<![endif]-->
 
 </head>
 

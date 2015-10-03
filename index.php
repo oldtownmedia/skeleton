@@ -1,4 +1,14 @@
-<?php get_header(); ?>
+<?php
+/* The main fallback for all other templates.
+ *
+ * As required by the template hierarchy, this template is the fallback for all
+ * others. Designed to match page.php.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skeleton
+ */
+get_header(); ?>
 
     <div <?php post_class('content'); ?>>
         <div class="main" role="main">

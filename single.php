@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying single posts.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skeleton
+ */
+get_header(); ?>
 
     <div <?php post_class('content'); ?>>
         <div class="main" role="main">

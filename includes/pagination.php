@@ -1,4 +1,10 @@
 <?php
+/*
+ * Custom pagination functions & includes.
+ *
+ * @package: skeleton
+ */
+
 
 /**
  * Display navigation to next/previous pages when applicable.

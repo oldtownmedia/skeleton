@@ -1,12 +1,10 @@
 <?php
-
 /**
- * Theme Setup
+ * Theme Setup.
  *
- * Setup theme, menus, and widgets
+ * Setup theme, menus, and widgets.
  *
- * @package	WordPress
- * @author	Old Town Media, Inc.
+ * @package	skeleton
  */
 class ThemeSetup{
 

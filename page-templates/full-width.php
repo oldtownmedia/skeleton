@@ -1,6 +1,8 @@
 <?php
 /*
-Template Name: Full Width Page
+ * Template Name: Full Width Page
+ *
+ * Template for a full-width main content area without the sidebar.
 */
 get_header(); ?>
 

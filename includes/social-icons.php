@@ -1,7 +1,12 @@
 <?php
-
 /**
  * OTM_Social_Icons class.
+ *
+ * This class allows easy and convenient calls of custom social media icons in
+ * the theme. Icons are called as SVGs to avoid loading in an extra icon font
+ * or images. Add your own to add to the set for your theme.
+ *
+ * @package: skeleton
  */
 class OTM_Social_Icons{
 

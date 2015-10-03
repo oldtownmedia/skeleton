@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying the site footer.
+ *
+ * Closes off the site and includes hooks for footer-called scripts & the admin bar.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package skeleton
+ */
+?>
     <footer>
         <div class="footer">
 

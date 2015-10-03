@@ -1,4 +1,9 @@
 <?php
+/*
+ * Hooks for including fstyles, scripts, and fonts.
+ *
+ * @package: skeleton
+ */
 
 add_action( 'wp_enqueue_scripts', 'load_styles');
 add_action( 'init', 'editor_styles');
@@ -31,9 +36,12 @@ function load_styles(){
 
     wp_register_style( 'style', get_template_directory_uri() . '/styles/main.css', array(), '', 'all' );
     wp_register_style( 'fonts', recent-posts-views/otm_google_web_fonts(), array(), '1', 'all' );
+    wp_register_style( 'skeleton-ie8', get_template_directory_uri() . '/styles/ie8.css', array(), '', 'all' );
+	wp_style_add_data( 'skeleton-ie8', 'conditional', 'lt IE 9' );
 
     wp_enqueue_style( 'style' );
     wp_enqueue_style( 'fonts' );
+    wp_enqueue_style( 'skeleton-ie8' );
 }
 
 /**

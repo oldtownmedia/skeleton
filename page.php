@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/*
+ * Template used by all default pages.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package skeleton
+ */
+get_header(); ?>
 
     <div <?php post_class('content'); ?>>
         <div class="main">

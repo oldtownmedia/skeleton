@@ -1,4 +1,9 @@
 <?php
+/*
+ * Resets unnecessary WordPress functionality or defaults.
+ *
+ * @package: skeleton
+ */
 
 // Hooks for reset functions
 add_filter( 'wp_nav_menu_args', 'my_wp_nav_menu_args' );
