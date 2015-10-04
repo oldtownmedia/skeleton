@@ -1,97 +1,102 @@
-/*jslint browser: true*/ /*global  $*/
-
-// menu open/close
-function openMenu( path ){
-    // replace and add custom behaviour
-    path.children('ul').css({
-    	'display': 'block',
-		'visibility': 'visible',
-		'opacity': '1',
-		'z-index': '200'
-    });
-    path.children('ul').show();
-    path.addClass( 'open-parent' );
-}
-
-function closeMenu(path){
-    // replace and add custom behaviour
-    path.find('ul').css({
-		'display': 'none',
-		'visibility': 'hidden',
-		'opacity': '0'
-	});
-}
-
-// Responsive Menus
-$(document).ready(function() {
-
-	// detect touch
-	if('ontouchstart' in window || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
-	    document.documentElement.className += ' touch';
-	}
-
-	// touch counters
-	$('.touch .menu-item-has-children').on('mouseenter', function(){
-		$(this).data('touch', 0);
-	});
-
-	$('.touch .menu-item-has-children').on('click', function(){
-		$(this).data('touch', $(this).data('touch') + 1);
-		if($(this).data('touch') < 0){
-	        return false;
-	    }
-	});
-
-	$('html').on('click', function(){
-		$('.touch .menu-item-has-children').data('touch', 0);
-	});
-
-	// menu events
-	$('.touch .menu-item-has-children').on('mouseenter', function(){
-	    openMenu( $(this) );
-	});
-
-	$('.touch .menu-item-has-children').on('mouseleave', function(){
-	    closeMenu( $(this) );
-	});
-
-	$('.touch .menu-item-has-children').on('click', function(e){
-	    // prevent html click event that closes menu
-	    if(e.stopPropagation){
-	        e.stopPropagation();
-	    }else{
-	        e.cancelBubble = true;
-	    }
-	});
-
-	$('.touch .menu-item-has-children').trigger('mouseenter');
-	$('.touch .menu-item-has-children').trigger('mouseleave');
-
-});
-
 (function($) {
-	$(document).ready(function() {
-		$('#menu-toggle').click(function (e) {
-			$('body').toggleClass('menu-shown');
+	jQuery(document).ready(function() {
+
+		// Open/close menu functions
+		function openMenu( path ){
+		    path.children('ul').css({
+		    	'display': 'block',
+				'visibility': 'visible',
+				'opacity': '1',
+				'z-index': '200'
+		    });
+		    path.children('ul').show();
+		    path.addClass( 'open-parent' );
+		}
+
+		function closeMenu(path){
+		    path.find('ul').css({
+				'display': 'none',
+				'visibility': 'hidden',
+				'opacity': '0'
+			});
+		}
+
+
+		/*
+		 * Imitate hover effect when a parent manu item is clicked on a touch
+		 * screen for the full-size menu. i.e.: Initiante drop-down
+		 */
+
+		// detect touch
+		if('ontouchstart' in window || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
+		    document.documentElement.className += ' touch';
+		}
+
+		// touch counters
+		jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
+			jQuery(this).data('touch', 0);
+		});
+
+		jQuery('.touch .menu-item-has-children').on('click', function(){
+			jQuery(this).data('touch', jQuery(this).data('touch') + 1);
+			if(jQuery(this).data('touch') < 0){
+		        return false;
+		    }
+		});
+
+		jQuery('html').on('click', function(){
+			jQuery('.touch .menu-item-has-children').data('touch', 0);
+		});
+
+		// menu events
+		jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
+		    openMenu( jQuery(this) );
+		});
+
+		jQuery('.touch .menu-item-has-children').on('mouseleave', function(){
+		    closeMenu( jQuery(this) );
+		});
+
+		jQuery('.touch .menu-item-has-children').on('click', function(e){
+		    if(e.stopPropagation){
+		        e.stopPropagation();
+		    }else{
+		        e.cancelBubble = true;
+		    }
+		});
+
+		// Trigger events on load as a precaution
+		jQuery('.touch .menu-item-has-children').trigger('mouseenter');
+		jQuery('.touch .menu-item-has-children').trigger('mouseleave');
+
+
+		/*
+		 * Open off-canvas responsive menu on small mobile screens
+		 */
+		jQuery('#menu-toggle').click(function (e) {
+			jQuery('body').toggleClass('menu-shown');
 			e.preventDefault();
 	    });
 
-	    $('.click-toggle-menu-off').click(function(e){
-		    $( 'body' ).toggleClass('menu-shown');
+	    jQuery('.click-toggle-menu-off').click(function(e){
+		    jQuery( 'body' ).toggleClass('menu-shown');
 		    e.preventDefault();
+		});
+
+
+		/*
+		 * Prevent empty search field from being submitted
+		 */
+		jQuery(document).ready(function(){
+		    jQuery('.searchform').submit(function(e) {
+		        var s = jQuery( this ).find('#s');
+		        if (!s.val()) {
+		            e.preventDefault();
+		            alert('Your search is empty!');
+		            jQuery('#s').focus();
+		        }
+		    });
 		});
 
 	});
 })( jQuery );
-
-// Prevent empty search
-$(document).ready(function(){
-    $('.searchform').submit(function(e) { // run the submit function, pin an event to it
-        var s = $( this ).find('#s'); // find the #s, which is the search input id
-        if (!s.val()) { // if s has no value, proceed
-            e.preventDefault(); // prevent the default submission
-            // alert('Your search is empty!'); // alert that the search is empty
-            $('#s').focus(); // focus on the search input
-        }
-    });
-});
