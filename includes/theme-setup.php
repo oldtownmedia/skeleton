@@ -39,7 +39,9 @@ class ThemeSetup{
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'html5', array(
-			'search-form', 'gallery', 'caption',
+			'search-form',
+			'gallery',
+			'caption'
 		) );
 
 		// Add a new, non-hard cropped thumbnail size
@@ -61,7 +63,7 @@ class ThemeSetup{
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'after_title'   => '</h2>'
 		) );
 
 	}

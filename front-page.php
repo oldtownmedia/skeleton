@@ -12,7 +12,8 @@
  */
 get_header(); ?>
 
-    <div <?php post_class('content'); ?>>
+    <div <?php post_class( 'content' ); ?>>
+
     	<article>
 	        <div class="main" role="main">
 

@@ -5,11 +5,11 @@
  * @package: skeleton
  */
 
-add_action( 'wp_enqueue_scripts', 'load_styles');
-add_action( 'init', 'editor_styles');
-add_filter( 'style_loader_tag', 'style_remove');
-add_action( 'wp_enqueue_scripts', 'otm_theme_scripts');
-add_action( 'init', 'otm_my_init');
+add_action( 'wp_enqueue_scripts', 'load_styles' );
+add_action( 'init', 'editor_styles' );
+add_filter( 'style_loader_tag', 'style_remove' );
+add_action( 'wp_enqueue_scripts', 'otm_theme_scripts' );
+add_action( 'init', 'otm_my_init' );
 
 /**
  * Build a Google Web Fonts link.
@@ -18,9 +18,9 @@ add_action( 'init', 'otm_my_init');
  */
 function otm_google_web_fonts(){
 
-	$fonts = "Source+Sans+Pro";
-	$font_link = 'https://fonts.googleapis.com/css?family='.$fonts;
-	$font_link = str_replace( ',', '%2C', $font_link );
+	$fonts 		= "Source+Sans+Pro";
+	$font_link	= 'https://fonts.googleapis.com/css?family=' . $fonts;
+	$font_link	= str_replace( ',', '%2C', $font_link );
 	$font_link .= '&subset=latin,latin-ext';
 
 	return $font_link;
@@ -84,9 +84,13 @@ function otm_theme_scripts(){
  * block the existing version from loading
  */
 function otm_my_init() {
-	if (!is_admin()) {
-		wp_deregister_script('jquery');
-		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, '1.11.3', false);
-		wp_enqueue_script('jquery');
+	if ( !is_admin() ) {
+
+		$version = '1.11.3';
+
+		wp_deregister_script( 'jquery' );
+		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js', false, $version, false );
+
+		wp_enqueue_script( 'jquery' );
 	}
 }

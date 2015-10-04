@@ -10,8 +10,10 @@
  */
 get_header(); ?>
 
-    <div <?php post_class('content'); ?>>
+    <div <?php post_class( 'content' ); ?>>
+
         <div class="main" role="main">
+
         	<article>
 
             <?php if ( have_posts() ) while ( have_posts() ) : the_post();

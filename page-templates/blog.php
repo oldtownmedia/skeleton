@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<div <?php post_class('content'); ?>>
+<div <?php post_class( 'content' ); ?>>
 	<main>
 
 	    <div class="main" role="main">

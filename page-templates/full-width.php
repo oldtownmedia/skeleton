@@ -6,7 +6,7 @@
 */
 get_header(); ?>
 
-    <div <?php post_class('content'); ?> role="main">
+    <div <?php post_class( 'content' ); ?> role="main">
 
         <article>
 
@@ -21,6 +21,7 @@ get_header(); ?>
         endwhile; ?>
 
         </article>
+
     </div>
 
 <?php get_footer(); ?>

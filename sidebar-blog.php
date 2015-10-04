@@ -14,7 +14,14 @@
 		<h2>Categories</h2>
 
 		<ul class='categories'>
-			<?php wp_list_categories( 'hide_empty=1&title_li=' );?>
+			<?php
+				$args = array(
+					'hide_empty'	=> 1,
+					'title_li'		=> ''
+				);
+
+				wp_list_categories( $args );
+			?>
 		</ul>
 
 	</aside>

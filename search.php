@@ -25,15 +25,17 @@ $search = new WP_Query( $search_query );
 <div class="content">
 	<div class="main" role="main">
 
-	<?php if(have_posts()) :
+	<?php if ( have_posts() ) :
 
-		$title = get_the_title(); $keys= explode(" ",$s); $title = preg_replace('/('.implode('|', $keys) .')/iu', '<strong class="search-excerpt">\0</strong>', $title);
+		$title = get_the_title();
+		$keys= explode( " ",$s );
+		$title = preg_replace( '/( '.implode( '|', $keys ) .' )/iu', '<strong class="search-excerpt">\0</strong>', $title );
 
 			echo "<header>";
 	    		echo "<h1>Search Results for: ".get_search_query()."</h1>";
 			echo "</header>";
 
-			while (have_posts()) : the_post();
+			while ( have_posts()) : the_post();
 
 				get_template_part( 'content', 'post' );
 
@@ -57,6 +59,7 @@ $search = new WP_Query( $search_query );
 	</div>
 
 	<?php get_sidebar(); ?>
+
 </div>
 
 <?php get_footer(); ?>
