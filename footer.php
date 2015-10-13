@@ -17,7 +17,7 @@
             </nav>
 
             <p>
-                &copy; Copyright <?php echo date( 'Y' ); ?> *** client *** | All Rights Reserved | Site by <a href="http://www.oldtownmediainc.com" target="_blank">Old Town Media, Inc.</a>
+                &copy; Copyright <?php echo date( 'Y' ); ?> *** client *** | All Rights Reserved | Site by <a href="https://oldtownmediainc.com" target="_blank">Old Town Media, Inc.</a>
             </p>
 
         </div>

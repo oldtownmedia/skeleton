@@ -35,8 +35,10 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
  * @return	array Modified list of argument
  */
 function my_wp_nav_menu_args($args = ''){
-    $args['container'] = false;
-    return $args;
+
+	$args['container'] = false;
+	return $args;
+
 }
 
 /**
@@ -45,7 +47,9 @@ function my_wp_nav_menu_args($args = ''){
  * @return	string Modified category tag
  */
 function remove_category_rel_from_category_list( $thelist ){
-    return str_replace( 'rel="category tag"', 'rel="tag"', $thelist );
+
+	return str_replace( 'rel="category tag"', 'rel="tag"', $thelist );
+
 }
 
 /**
@@ -54,8 +58,10 @@ function remove_category_rel_from_category_list( $thelist ){
  * @return	string Modified image tag
  */
 function remove_thumbnail_dimensions( $html ){
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
+
+	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+	return $html;
+
 }
 
 /**
@@ -64,7 +70,9 @@ function remove_thumbnail_dimensions( $html ){
  * @return	void
  */
 function remove_wp_version (){
-    return '';
+
+	return '';
+
 }
 
 /**
@@ -74,11 +82,13 @@ function remove_wp_version (){
  * #return	void
  */
 function imagelink_setup(){
-    $image_set = get_option( 'image_default_link_type' );
 
-    if ( $image_set !== 'none' ){
-    	update_option( 'image_default_link_type', 'none' );
-    }
+	$image_set = get_option( 'image_default_link_type' );
+
+	if ( $image_set !== 'none' ){
+		update_option( 'image_default_link_type', 'none' );
+	}
+
 }
 
 /**
@@ -118,10 +128,12 @@ function otm_wp_title( $title, $sep ){
  * Redirect to a single post if only one results is returned on search page
  */
 function otm_single_result() {
-    if ( is_search() ) {
-        global $wp_query;
-        if ( $wp_query->post_count == 1 ) {
-            wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
-        }
-    }
+
+	if ( is_search() ) {
+		global $wp_query;
+		if ( $wp_query->post_count == 1 ) {
+			wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
+		}
+	}
+
 }

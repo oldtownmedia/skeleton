@@ -76,24 +76,22 @@ class ThemeSetup{
 	 */
 	public function otm_register_menus(){
 
-	  register_nav_menus( array(
-	  	'header-menu'	=> __( 'Header Menu', 'otm-skeleton' ),
-	  ) );
+		register_nav_menus( array(
+			'header-menu'	=> __( 'Header Menu', 'otm-skeleton' ),
+		) );
 
 	}
 
 	/**
-	 * Name custom image size with the media UI.
-	 *
-	 * $return	array Modified image size name array
-	 */
+	* Name custom image size with the media UI.
+	*
+	* $return	array Modified image size name array
+	*/
 	public function my_small_size( $sizes ){
-	    return array_merge( $sizes, array(
-	        'small-no-crop'	=> __( 'Small no-crop' ),
-	    ) );
+		return array_merge( $sizes, array(
+			'small-no-crop'	=> __( 'Small no-crop' ),
+		) );
 	}
-
-
 }
 
 // Run our class by default

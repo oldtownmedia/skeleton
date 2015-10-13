@@ -34,14 +34,15 @@ function otm_google_web_fonts(){
  */
 function load_styles(){
 
-    wp_register_style( 'style', get_template_directory_uri() . '/styles/main.css', array(), '', 'all' );
-    wp_register_style( 'fonts', recent-posts-views/otm_google_web_fonts(), array(), '1', 'all' );
-    wp_register_style( 'skeleton-ie8', get_template_directory_uri() . '/styles/ie8.css', array(), '', 'all' );
+	wp_register_style( 'style', get_template_directory_uri() . '/styles/main.css', array(), '', 'all' );
+	wp_register_style( 'fonts', otm_google_web_fonts(), array(), '1', 'all' );
+	wp_register_style( 'skeleton-ie8', get_template_directory_uri() . '/styles/ie8.css', array(), '', 'all' );
 	wp_style_add_data( 'skeleton-ie8', 'conditional', 'lt IE 9' );
 
-    wp_enqueue_style( 'style' );
-    wp_enqueue_style( 'fonts' );
-    wp_enqueue_style( 'skeleton-ie8' );
+	wp_enqueue_style( 'style' );
+	wp_enqueue_style( 'fonts' );
+	wp_enqueue_style( 'skeleton-ie8' );
+
 }
 
 /**
@@ -52,7 +53,7 @@ function load_styles(){
 function editor_styles(){
 
 	add_editor_style( get_template_directory_uri() . '/styles/editor-styles.css' );
-    add_editor_style( recent-posts-views/otm_google_web_fonts() );
+    add_editor_style( otm_google_web_fonts() );
 
 }
 
@@ -62,7 +63,9 @@ function editor_styles(){
  * @return	string Cleaned style tag
  */
 function style_remove( $tag ){
-    return preg_replace( '~\s+type=["\'][^"\']++["\']~', '', $tag );
+
+	return preg_replace( '~\s+type=["\'][^"\']++["\']~', '', $tag );
+
 }
 
 /**
@@ -72,10 +75,10 @@ function style_remove( $tag ){
  */
 function otm_theme_scripts(){
 
-    if ( !is_admin() ){
-        wp_register_script( 'otm_theme', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), '' );
-        wp_enqueue_script( 'otm_theme' );
-    }
+	if ( !is_admin() ){
+		wp_register_script( 'otm_theme', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), '' );
+		wp_enqueue_script( 'otm_theme' );
+	}
 
 }
 
@@ -84,6 +87,7 @@ function otm_theme_scripts(){
  * block the existing version from loading
  */
 function otm_my_init() {
+
 	if ( !is_admin() ) {
 
 		$version = '1.11.3';
@@ -93,4 +97,5 @@ function otm_my_init() {
 
 		wp_enqueue_script( 'jquery' );
 	}
+
 }
