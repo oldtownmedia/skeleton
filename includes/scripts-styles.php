@@ -19,7 +19,7 @@ add_action( 'init', 'otm_my_init' );
 function otm_google_web_fonts(){
 
 	$fonts 		= "Source+Sans+Pro";
-	$font_link	= 'https://fonts.googleapis.com/css?family=' . $fonts;
+	$font_link	= '//fonts.googleapis.com/css?family=' . $fonts;
 	$font_link	= str_replace( ',', '%2C', $font_link );
 	$font_link .= '&subset=latin,latin-ext';
 
@@ -93,7 +93,7 @@ function otm_my_init() {
 		$version = '1.11.3';
 
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js', false, $version, false );
+		wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js', false, $version, false );
 
 		wp_enqueue_script( 'jquery' );
 	}
