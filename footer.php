@@ -9,18 +9,16 @@
  * @package skeleton
  */
 ?>
-    <footer>
-        <div class="footer">
+    <footer class="site-footer">
 
-            <nav>
-                <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-            </nav>
+        <nav>
+            <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+        </nav>
 
-            <p>
-                &copy; Copyright <?php echo date( 'Y' ); ?> *** client *** | All Rights Reserved | Site by <a href="https://oldtownmediainc.com" target="_blank">Old Town Media, Inc.</a>
-            </p>
+        <p>
+            &copy; Copyright <?php echo date( 'Y' ); ?> *** client *** | All Rights Reserved | Site by <a href="https://oldtownmediainc.com" target="_blank">Old Town Media, Inc.</a>
+        </p>
 
-        </div>
     </footer>
 
 </div> <!-- End site-container -->
@@ -33,7 +31,6 @@
 	?>
 
 </div>
-
 
 <?php
 	wp_footer();

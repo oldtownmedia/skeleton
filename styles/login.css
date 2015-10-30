@@ -4,12 +4,12 @@
 
 /* Page background image */
 body.login{
-    background: url("../images/bg.jpg") !important;
+    background: url( "../images/bg.jpg" ) !important;
 }
 
 /* Logo above form */
 .login h1 a{
-    background-image: url("../images/logo.png") !important;
+    background-image: url( "../images/logo.png" ) !important;
     background-size: 302px 172px !important;
     width: 302px !important;
     height: 172px !important;

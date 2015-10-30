@@ -1,0 +1,7 @@
+// A stylesheet specifically for handling IE9 styles - mainly flexbox issues
+
+@mixin mq( $breakpoint ){
+	@media screen and ( min-width: $breakpoint ){
+		@content;
+	}
+}

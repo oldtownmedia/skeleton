@@ -29,12 +29,12 @@ $hover-bkg: $aColor;
 				padding: 0;
 
 				&>li{
-					line-height: $nav-height;
 					display: inline-block;
 					color: $nav-color;
 					position: relative;
 					text-transform: uppercase;
 					font: 400 18px $nav-font;
+					line-height: $nav-height;
 
 					// Keep our last few nav items from aligning the dropdowns
 					// to the left
@@ -135,6 +135,18 @@ $hover-bkg: $aColor;
 					}
 				}
 			}
+		}
+	}
+
+	@include mq( $mid-width ){
+		.nav>ul>li a{
+			padding: 0 15px;
+		}
+	}
+
+	@include mq( $full-width ){
+		.nav>ul>li a{
+			padding: 0 20px;
 		}
 	}
 

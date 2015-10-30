@@ -24,7 +24,7 @@ get_header(); ?>
 
             echo "</article>";
 
-            otm_post_nav();
+			echo "<a href='".site_url( '/blog/' )."' class='button back'>Back to Blog</a>";
 
             endwhile; ?>
 

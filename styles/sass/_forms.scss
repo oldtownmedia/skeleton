@@ -9,24 +9,26 @@
 	input[type=tel],
 	input[type=email],
 	input[type=password],
+	.select2-choice,
     select,
     textarea{
 		font: 18px/2em $field-font;
 		color: $field-color;
 		padding: 0 10px;
+		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: #ffffff;
 		border: 1px solid $field-color;
 		-webkit-appearance: none;
-		-webkit-border-radius: 0;
 	}
 
 	input[type=text],
 	input[type=tel],
 	input[type=email],
 	input[type=password],
+	.select2-choice,
 	select{
-    	height: 2em;
+    	min-height: 2em;
     }
 
     input[type=radio],
@@ -36,8 +38,24 @@
 	    margin-right: 5px;
     }
 
+    ::-webkit-input-placeholder {
+	   color: lighten( $field-color, 20% );
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: lighten( $field-color, 20% );
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: lighten( $field-color, 20% );
+	}
+
+	:-ms-input-placeholder {
+	   color: lighten( $field-color, 20% );
+	}
+
     textarea{
-    	min-height: 200px;
+    	min-height: 150px;
     }
 
     select{
@@ -49,7 +67,7 @@
 
     input[type=submit],
     button{
-    	padding: 0 20px;
+    	padding: 7px 20px;
     	text-align: center;
     	display: inline-block;
 		-webkit-appearance: none;

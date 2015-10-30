@@ -26,37 +26,64 @@
 
 <div class="site-container">
 
-	<a id="menu-toggle" href="#mobile-nav" class="nav-icon button trigger"><span>Menu</span></a>
+	<a id="menu-toggle" href="#mobile-nav" class="nav-icon trigger"><span></span></a>
 
     <header class="site-header">
 
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
 
             <a itemprop="url" href="<?php echo site_url(); ?>">
-              <img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo('name') ?>">
+            	<img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo('name') ?>">
             </a>
 
         </div>
 
-        <nav>
-          <div class="nav">
+        <div class="contactinfo">
 
-            <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+        	<p class="social">
 
-          </div>
-        </nav>
+        		<?php
+	        		$icons = array(
+		        		array(
+			        		'type'	=> 'facebook',
+			        		'link'	=> 'https://facebook.com'
+		        		),
+		        		array(
+			        		'type'	=> 'twitter',
+			        		'link'	=> 'https://twitter.com'
+		        		)
+	        		);
+
+	        		$social = new ThemeIcons;
+	        		echo $social->assemble_icons( $icons );
+	        	?>
+
+        	</p>
+
+        </div>
 
     </header>
 
+    <nav>
+    	<div class="nav">
+
+        	<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+
+		</div>
+    </nav>
+
   	<div class="banner">
 
-  		<?php if ( is_front_page() ){
+  		<?php
+
+	  	if ( is_front_page() ){
   			if ( function_exists( 'soliloquy' ) ) { soliloquy( '25' ); }
   		} else {
-  			if ( get_the_post_thumbnail() != '' && !is_single() ){
+  			if ( get_the_post_thumbnail() != '' && !is_single() && !is_category() ){
   	        	the_post_thumbnail();
   	        }
   		}
+
   		?>
 
   	</div>
