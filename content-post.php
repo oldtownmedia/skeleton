@@ -19,7 +19,7 @@ echo "<article class='blog'>";
 
     echo apply_filters( 'the_content', wp_trim_words( get_the_content(), '50' ) );
 
-    echo "<a href='".get_permalink()."' class='button'>Read More</a>";
+    echo "<a href='".get_permalink()."' class='button' role='button'>Read More</a>";
 
 echo "</article>";
 

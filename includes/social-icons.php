@@ -50,9 +50,9 @@ class ThemeIcons{
 		if ( is_array( $icon_data ) && !empty( $icon_data ) ){
 
 			if ( $icon_data['link'] ){
-				$prehtml .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."'>";
+				$prehtml .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."' aria-label='".$icon_data['type']." link'>";
 			} else {
-				$prehtml .= "<a href='".$icon_data['type']."' target='_blank' class='".$icon_data['type']."'>";
+				$prehtml .= "<a class='".$icon_data['type']."' aria-label='".$icon_data['type']." link'>";
 			}
 
 			switch( $icon_data['type'] ){

@@ -24,7 +24,7 @@ get_header(); ?>
 
             echo "</article>";
 
-			echo "<a href='".site_url( '/blog/' )."' class='button back'>Back to Blog</a>";
+			echo "<a href='".site_url( '/blog/' )."' class='button back' role='button'>Back to Blog</a>";
 
             endwhile; ?>
 
