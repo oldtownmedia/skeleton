@@ -12,7 +12,6 @@ class ThemeSetup{
 	 * Constructor function.
 	 *
 	 * @access public
-	 * @return void
 	 */
 	public function __construct(){
 
@@ -31,8 +30,6 @@ class ThemeSetup{
 
 	/**
 	 * Setup default theme options.
-	 *
-	 * @return void
 	 */
 	public function otm_theme_setup(){
 
@@ -51,8 +48,6 @@ class ThemeSetup{
 
 	/**
 	 * Registers sidebars (only register main - add others through the Custom Sidebars Plugin.
-	 *
-	 * @return void
 	 */
 	public function otm_register_sidebars(){
 
@@ -71,8 +66,6 @@ class ThemeSetup{
 	/**
 	 * Register custom menus.
 	 * Header Menu is only default defined menu. Add more as needed.
-	 *
-	 * @return void
 	 */
 	public function otm_register_menus(){
 

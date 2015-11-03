@@ -9,8 +9,6 @@
 /**
  * Display navigation to next/previous pages when applicable.
  * Used within single posts.
- *
- * @return void
  */
 function otm_paging_nav(){
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ){
@@ -36,8 +34,6 @@ function otm_paging_nav(){
 /**
  * Display navigation to next/previous pages when applicable.
  * Used on post listing pages.
- *
- * @return void
  */
 function otm_post_nav(){
 

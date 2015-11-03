@@ -66,8 +66,6 @@ function remove_thumbnail_dimensions( $html ){
 
 /**
  * Hide WordPress version # from prying eyes.
- *
- * @return	void
  */
 function remove_wp_version (){
 
@@ -78,8 +76,6 @@ function remove_wp_version (){
 /**
  * Disable image auto-linking.
  * Because it's the most annoying thing. Ever.
- *
- * #return	void
  */
 function imagelink_setup(){
 

@@ -29,8 +29,6 @@ function otm_google_web_fonts(){
 
 /**
  * Load any necessary stylesheets.
- *
- * @return	void
  */
 function load_styles(){
 
@@ -55,8 +53,6 @@ function load_styles(){
 
 /**
  * Load backend editor styles.
- *
- * @return	void
  */
 function editor_styles(){
 
@@ -78,8 +74,6 @@ function style_remove( $tag ){
 
 /**
  * Load theme javascript.
- *
- * @return	void
  */
 function otm_theme_scripts(){
 
