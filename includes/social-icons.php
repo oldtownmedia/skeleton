@@ -18,10 +18,9 @@ class ThemeIcons{
 	 * @return string html assembly of icons
 	 */
 	public function assemble_icons( $icons = array(), $instance = '-base' ){
+		$html = '';
 
 		if ( is_array( $icons ) && !empty( $icons ) ){
-
-			$html = '';
 
 			foreach ( $icons as $icon ){
 

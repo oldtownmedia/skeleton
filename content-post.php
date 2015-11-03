@@ -22,5 +22,3 @@ echo "<article class='blog'>";
     echo "<a href='".get_permalink()."' class='button' role='button'>Read More</a>";
 
 echo "</article>";
-
-?>

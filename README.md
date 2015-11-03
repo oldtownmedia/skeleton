@@ -1,5 +1,7 @@
 # Skeleton
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/oldtownmedia/skeleton/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/oldtownmedia/skeleton/?branch=master)
+
 This is our boilerplate theme for all internal projects at Old Town Media. It's simple, easy, and easily modifiable. Use it in your own themes or fork it and modify it how you please!
 
 ## Why We Built Our Own Skeleton
