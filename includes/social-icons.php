@@ -53,7 +53,7 @@ class ThemeIcons{
 	 */
 	private function build_icon( $icon_data, $instance ){
 
-		$html = $prehtml = $refs = '';
+		$html = $prehtml = '';
 
 		// Check that the data exists and is a proper array
 		if ( !is_array( $icon_data ) && empty( $icon_data ) ){
@@ -73,7 +73,7 @@ class ThemeIcons{
 
 		// Build a separate SVG object for reference only.
 		$html .= "<svg xmlns='http://www.w3.org/2000/svg' style='display: none;'>";
-			$html .= '<symbol id="icon-dropbox'.$instance.'" viewBox="0 0 '.$icon_paths['dimensions'].'">';
+			$html .= '<symbol id="icon-' . $icon_data['type'] . $instance.'" viewBox="0 0 '.$icon_paths['dimensions'].'">';
 				$html .= '<title>'.__( strtoupper( $icon_data['type'] ) . ' icon', 'otm-mu' ).'</title>';
 				$html .= $icon_paths['paths'];
 			$html .= '</symbol>';
@@ -121,9 +121,7 @@ class ThemeIcons{
 			case 'facebook' :
 
 				$icon['dimensions'] = '585 1024';
-				$icon['paths'] 		= '<symbol id="icon-facebook'.$instance.'" viewBox="0 0 585 1024">
-					<path class="svg-main-color" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"></path>
-				</symbol>';
+				$icon['paths'] 		= '<path class="svg-main-color" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"></path>';
 
 			break;
 
