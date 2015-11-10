@@ -1,19 +1,22 @@
 <?php
+
 /*
  * Custom pagination functions & includes.
  *
  * @package: skeleton
  */
 
-
 /**
  * Display navigation to next/previous pages when applicable.
  * Used within single posts.
  */
 function otm_paging_nav(){
+
+	// Only run if we have more than 1 page
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ){
 		return;
 	}
+
 	?>
 	<nav class="navigation paging-navigation">
 		<div class="nav-links">
@@ -28,8 +31,11 @@ function otm_paging_nav(){
 
 		</div>
 	</nav>
+
 	<?php
+
 }
+
 
 /**
  * Display navigation to next/previous pages when applicable.
@@ -40,9 +46,11 @@ function otm_post_nav(){
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
 
-	if ( ! $next && ! $previous ){
+	// Only run if we have next or previous values.
+	if ( !$next && !$previous ){
 		return;
 	}
+
 	?>
 	<nav class="navigation post-navigation">
 		<div class="nav-links">
@@ -52,5 +60,7 @@ function otm_post_nav(){
 			?>
 		</div>
 	</nav>
+
 	<?php
+
 }

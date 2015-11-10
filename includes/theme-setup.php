@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme Setup.
  *
@@ -6,12 +7,11 @@
  *
  * @package	skeleton
  */
+
 class ThemeSetup{
 
 	/**
 	 * Constructor function.
-	 *
-	 * @access public
 	 */
 	public function __construct(){
 
@@ -23,7 +23,7 @@ class ThemeSetup{
 
 		// Register the theme max width
 		if ( ! isset( $content_width ) ){
-			$content_width = 1000;
+			$content_width = 1200;
 		}
 
 	}
@@ -47,7 +47,7 @@ class ThemeSetup{
 	}
 
 	/**
-	 * Registers sidebars (only register main - add others through the Custom Sidebars Plugin.
+	 * Registers sidebars (only register main - add others through the Custom Sidebars Plugin).
 	 */
 	public function otm_register_sidebars(){
 
@@ -78,7 +78,7 @@ class ThemeSetup{
 	/**
 	* Name custom image size with the media UI.
 	*
-	* $return	array Modified image size name array
+	* @return	array Modified image size name array
 	*/
 	public function my_small_size( $sizes ){
 		return array_merge( $sizes, array(

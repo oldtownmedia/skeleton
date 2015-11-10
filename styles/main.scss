@@ -15,7 +15,7 @@
 	// Breakpoints
 	$tablet: 700px;
 	$mid-width: 900px;
-	$full-width: 1170px;
+	$full-width: 1200px;
 
 // Mixins
 
@@ -25,13 +25,8 @@
 		}
 	}
 
-	@mixin wrapper( $wrapper: 1170px ){
-		max-width: $wrapper;
-		margin: auto;
-	}
-
-@import 'sass/_normalize.scss',
-		'sass/_burger.scss';
+@import 'sass/_normalize.scss',	// Normalization/reset
+		'sass/_burger.scss';	// Mobile burger icon library
 
 /**********************\
 	Default Globals
@@ -65,11 +60,50 @@ a{
 
 }
 
-.wrapper{
-	@include wrapper;
+.wrap{
+	max-width: $full-width;
+	width: 100%;
+	margin: auto;
+	padding-left: 3%;
+	padding-right: 3%;
+
+	@include mq( $tablet ){
+		padding-left: 2%;
+		padding-right: 2%;
+	}
+
+	@include mq( $mid-width ){
+		padding-left: 1%;
+		padding-right: 1%;
+	}
+
+	@include mq( $full-width ){
+		padding-left: .5%;
+		padding-right: .5%;
+	}
 }
 
-@import 'sass/_menus.scss',
-		'sass/_cpts.scss',
-		'sass/_forms.scss',
-		'sass/_print.scss';
+.site-header{
+
+}
+
+.site-footer{
+
+}
+
+.content{
+
+}
+
+	.main{
+
+	}
+
+	.sidebar{
+
+	}
+
+@import 'sass/_menus.scss',	// Navigation Item
+		'sass/_cpts.scss',	// Custom Post Types
+		'sass/_forms.scss',	// Forms
+		'sass/_print.scss';	// Print for extra credit

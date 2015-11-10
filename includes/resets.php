@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Resets unnecessary WordPress functionality or defaults.
  *
@@ -13,7 +14,7 @@ add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
 add_filter( 'the_generator', 'remove_wp_version' );
 add_action( 'admin_init', 'imagelink_setup', 10 );
 add_filter( 'wp_title', 'otm_wp_title', 10, 2 );
-add_action('template_redirect', 'otm_single_result' );
+add_action( 'template_redirect', 'otm_single_result' );
 
 // Functionless resets
 add_filter( 'widget_text', 'do_shortcode' );
@@ -32,19 +33,22 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 /**
  * Remove the <div> surrounding the dynamic navigation to cleanup markup.
  *
+ * @param 	array Arguments for this particular menu
  * @return	array Modified list of argument
  */
-function my_wp_nav_menu_args($args = ''){
+function my_wp_nav_menu_args( $args = '' ){
 
 	$args['container'] = false;
 	return $args;
 
 }
 
+
 /**
- * Remove invalid rel attribute values in the categorylist.
+ * Remove invalid rel attribute values in the category list.
  *
- * @return	string Modified category tag
+ * @param	string original category tag
+ * @return	string modified category tag
  */
 function remove_category_rel_from_category_list( $thelist ){
 
@@ -52,10 +56,12 @@ function remove_category_rel_from_category_list( $thelist ){
 
 }
 
+
 /**
  * Remove thumbnail width and height dimensions that prevent fluid images in the_thumbnail.
  *
- * @return	string Modified image tag
+ * @param	string original image tag
+ * @return	string modified image tag
  */
 function remove_thumbnail_dimensions( $html ){
 
@@ -63,6 +69,7 @@ function remove_thumbnail_dimensions( $html ){
 	return $html;
 
 }
+
 
 /**
  * Hide WordPress version # from prying eyes.
@@ -72,6 +79,7 @@ function remove_wp_version (){
 	return '';
 
 }
+
 
 /**
  * Disable image auto-linking.
@@ -87,9 +95,13 @@ function imagelink_setup(){
 
 }
 
+
 /**
  * Builds a nice, clean WordPress title.
  * Originated from Tom McFarlin
+ *
+ * @global	$paged pagination information
+ * @global	$page current page
  *
  * @param	string $title Title tag text
  * @param	string $sep Seperator text
@@ -120,16 +132,21 @@ function otm_wp_title( $title, $sep ){
 
 }
 
+
 /**
  * Redirect to a single post if only one results is returned on search page
+ *
+ * @global object $wp_query current page/object query
  */
 function otm_single_result() {
 
 	if ( is_search() ) {
 		global $wp_query;
+
 		if ( $wp_query->post_count == 1 ) {
 			wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
 		}
+
 	}
 
 }
