@@ -25,7 +25,8 @@
 		}
 	}
 
-@import 'sass/_normalize.scss',	// Normalization/reset
+@import 'sass/_sanitize.scss',	// Normalization/reset
+		'sass/_wp_base.scss',	// WordPress styles & OTM resets
 		'sass/_burger.scss';	// Mobile burger icon library
 
 /**********************\

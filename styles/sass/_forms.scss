@@ -54,6 +54,25 @@
 	   color: lighten( $field-color, 20% );
 	}
 
+	&:hover,
+	&:focus{
+		::-webkit-input-placeholder {
+		   color: lighten( $field-color, 60% );
+		}
+
+		:-moz-placeholder { /* Firefox 18- */
+		   color: lighten( $field-color, 60% );
+		}
+
+		::-moz-placeholder {  /* Firefox 19+ */
+		   color: lighten( $field-color, 60% );
+		}
+
+		:-ms-input-placeholder {
+		   color: lighten( $field-color, 60% );
+		}
+	}
+
     textarea{
     	min-height: 150px;
     }

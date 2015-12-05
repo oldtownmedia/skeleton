@@ -10,7 +10,7 @@ add_action( 'wp_enqueue_scripts', 'load_styles' );
 add_action( 'init', 'editor_styles' );
 add_filter( 'style_loader_tag', 'style_remove' );
 add_action( 'wp_enqueue_scripts', 'otm_theme_scripts' );
-add_action( 'init', 'otm_my_init' );
+add_action( 'wp_enqueue_scripts', 'otm_my_init' );
 add_action( 'login_head',  'evans_login_css' );
 
 
