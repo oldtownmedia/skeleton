@@ -56,9 +56,9 @@ function load_styles(){
 	wp_register_style( 'skeleton-ie9', get_template_directory_uri() . '/styles/ie9.css', array(), '', 'all' );
 	wp_style_add_data( 'skeleton-ie9', 'conditional', 'IE 9' );
 
+	// Enqueue everything
 	wp_enqueue_style( 'style' );
 	wp_enqueue_style( 'fonts' );
-
 	wp_enqueue_style( 'skeleton-ie8' );
 	wp_enqueue_style( 'skeleton-ie9' );
 
@@ -139,5 +139,7 @@ function otm_my_init() {
  * @see wp_enqueue_style, get_template_directory_uri
  */
 function evans_login_css() {
+
 	wp_enqueue_style( 'login_css', get_template_directory_uri() . '/styles/login.css' );
+
 }
