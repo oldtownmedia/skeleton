@@ -42,6 +42,28 @@ class ThemeIcons{
 
 
 	/**
+	 * Print a single icon instead of a complex array.
+	 *
+	 * @see $this->build_icon
+	 *
+	 * @param 	array Icon to build HTML for
+	 * @param	string Unique identifier for this set of icons
+	 * @return	string HTML assembly of icons
+	 */
+	public function single_icon( $icon = array(), $instance = '-base' ){
+
+		// Check that the data exists and is a proper array
+		if ( !is_array( $icon ) && empty( $icon ) ){
+			return;
+		}
+
+		// Fetch and return the HTML for this icon
+		return $this->build_icon( $icon, $instance );
+
+	}
+
+
+	/**
 	 * Assemble the html for each icon fed into assemble_icons.
 	 *
 	 * @see $this->icon_paths
