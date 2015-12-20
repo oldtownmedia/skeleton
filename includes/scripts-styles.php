@@ -10,7 +10,7 @@ add_action( 'wp_enqueue_scripts', 'load_styles' );
 add_action( 'init', 'editor_styles' );
 add_filter( 'style_loader_tag', 'style_remove' );
 add_action( 'wp_enqueue_scripts', 'otm_theme_scripts' );
-add_action( 'wp_enqueue_scripts', 'otm_my_init' );
+add_action( 'wp_enqueue_scripts', 'custom_jquery' );
 add_action( 'login_head',  'evans_login_css' );
 
 
@@ -115,7 +115,7 @@ function otm_theme_scripts(){
  *
  * @see wp_deregister_script, wp_register_script, wp_enqueue_script
  */
-function otm_my_init() {
+function custom_jquery() {
 
 	// Make sure we're ONLY running this script on the front-end. Will cause issues
 	// in admin.

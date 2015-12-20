@@ -95,6 +95,18 @@ a{
 
 // In-content image alignment
 
+.alignleft{
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.alignright{
+	float: right;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
 .size-medium.alignleft,
 .size-large.alignleft,
 .size-medium.alignright,
