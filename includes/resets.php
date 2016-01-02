@@ -13,7 +13,6 @@ add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10 );
 add_filter( 'image_send_to_editor', 'remove_thumbnail_dimensions', 10 );
 add_filter( 'the_generator', 'remove_wp_version' );
 add_action( 'admin_init', 'imagelink_setup', 10 );
-add_filter( 'wp_title', 'otm_wp_title', 10, 2 );
 add_action( 'template_redirect', 'otm_single_result' );
 
 // Functionless resets
@@ -92,43 +91,6 @@ function imagelink_setup(){
 	if ( $image_set !== 'none' ){
 		update_option( 'image_default_link_type', 'none' );
 	}
-
-}
-
-
-/**
- * Builds a nice, clean WordPress title.
- * Originated from Tom McFarlin
- *
- * @global	$paged pagination information
- * @global	$page current page
- *
- * @param	string $title Title tag text
- * @param	string $sep Seperator text
- * @return	string clean title
- */
-function otm_wp_title( $title, $sep ){
-	global $paged, $page;
-
-	if ( is_feed() ){
-		return $title;
-	} // end if
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) ){
-		$title = "$title $sep $site_description";
-	} // end if
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 ){
-		$title = sprintf( __( 'Page %s', 'otm-skeleton' ), max( $paged, $page ) ) . " $sep $title";
-	} // end if
-
-	return $title;
 
 }
 
