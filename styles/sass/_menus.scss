@@ -23,15 +23,19 @@ $hover-bkg: $aColor;
 			z-index: 95;
 			background-color: $nav-bkg;
 
-			&>ul{
+			.menu{
 				text-align: center;
 				margin: 0;
 				padding: 0;
 
-				&>li{
+				.menu-item{
+					list-style-type: none;
+					position: relative;
+				}
+
+				&>.menu-item{
 					display: inline-block;
 					color: $nav-color;
-					position: relative;
 					text-transform: uppercase;
 					font: 400 18px $nav-font;
 					line-height: $nav-height;
@@ -62,7 +66,8 @@ $hover-bkg: $aColor;
 					}
 
 					&:hover,
-					&.current-menu-item{
+					&.current-menu-item,
+					&:current-menu-ancestor{
 						background-color: $hover-bkg;
 
 						a{
@@ -78,74 +83,67 @@ $hover-bkg: $aColor;
 						visibility: visible;
 						opacity: 1;
 					}
+				}
+			}
 
-					&>ul{
-						visibility: hidden;
-						opacity: 0;
-						position: absolute;
-						min-width: 200px;
-						top: 100%;
-						margin: 0;
-						padding: 5px 0;
-						background: $hover-bkg;
+			.sub-menu{
+				visibility: hidden;
+				opacity: 0;
+				position: absolute;
+				min-width: 200px;
+				top: 100%;
+				margin: 0;
+				padding: 5px 0;
+				background: $hover-bkg;
 
-						li{
-							width: 100%;
-		    				white-space: nowrap;
-		    				list-style-type: none;
-		    				color: #ffffff;
-		    				padding: 0 12px;
-		    				text-align: left;
-							line-height: 1em;
-							position: relative;
+				.menu-item{
+					width: 100%;
+    				white-space: nowrap;
+    				color: #ffffff;
+    				padding: 0 12px;
+    				text-align: left;
+					line-height: 1em;
 
-							&:hover{
-								background-color: $nav-bkg;
+					&:hover{
+						background-color: $nav-bkg;
 
-								a{
-									color: #fff;
-								}
-							}
-
-							ul{
-								top: 0;
-								left: 100%;
-								position: absolute;
-								visibility: hidden;
-								opacity: 0;
-								padding: 0;
-								margin: 0;
-								background: $hover-bkg;
-								text-align: left;
-								min-width: 200px;
-							}
-
-							&:hover ul{
-								opacity: 1;
-								visibility: visible;
-							}
-
-							a{
-								display: inline-block;
-								padding: 13px 5px;
-								width: 80%;
-								color: #fff;
-							}
+						a{
+							color: #fff;
 						}
 					}
+
+					&:hover .sub-menu{
+						opacity: 1;
+						visibility: visible;
+					}
+
+					a{
+						display: inline-block;
+						padding: 13px 5px;
+						width: 80%;
+					}
+				}
+
+				.sub-menu{
+					top: 0;
+					left: 100%;
+					padding: 0;
+					background: $hover-bkg;
+					text-align: left;
+					min-width: 200px;
 				}
 			}
 		}
 	}
 
 	@include mq( $mid-width ){
-		.nav>ul>li a{
+		.nav>.menu>.menu-item a{
 			padding: 0 15px;
 		}
 	}
 
 	@include mq( $full-width ){
-		.nav>ul>li a{
+		.nav>.menu>.menu-item a{
 			padding: 0 20px;
 		}
 	}

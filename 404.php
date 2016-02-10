@@ -17,10 +17,8 @@ get_header(); ?>
             </header>
 
             <p>
-                Looks like something's not where it's supposed to be. You might try searching below.
+                Looks like something's not where it's supposed to be. You might try the mani menu to find what you need.
             </p>
-
-            <?php get_search_form(); ?>
 
         </div>
 

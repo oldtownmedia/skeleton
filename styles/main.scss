@@ -4,7 +4,9 @@
 
 	// Fonts
 
+
 	// Colors
+
 
 	// Forms
 	$label-color: #000000;
@@ -88,21 +90,25 @@ a{
 
 }
 
-.site-footer{
-
-}
-
 .content{
 
 }
 
-	.main{
+	@include mq( $tablet ){
+
+		.main{
+
+		}
+
+		.sidebar{
+
+		}
 
 	}
 
-	.sidebar{
+.site-footer{
 
-	}
+}
 
 @import 'sass/_menus.scss',	// Navigation Items
 		'sass/_cpts.scss',	// Custom Post Types
