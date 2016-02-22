@@ -27,37 +27,14 @@
 		}
 	}
 
-@import 'sass/_sanitize.scss',	// Normalization/reset
-		'sass/_wp_base.scss',	// WordPress styles & OTM resets
-		'sass/_burger.scss';	// Mobile burger icon library
+@import 'sass/_sanitize.scss',		// Normalization/reset
+		'sass/_wp_base.scss',		// WordPress styles & OTM resets
+		'sass/_burger.scss',		// Mobile burger icon library
+		'sass/_typography.scss';	// Typography styles
 
 /**********************\
 	Default Globals
 \**********************/
-
-body{
-
-}
-
-h1{
-
-}
-
-h2{
-
-}
-
-h3{
-
-}
-
-h4{
-
-}
-
-a{
-
-}
 
 .button{
 

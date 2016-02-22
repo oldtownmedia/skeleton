@@ -67,7 +67,7 @@ $hover-bkg: $aColor;
 
 					&:hover,
 					&.current-menu-item,
-					&:current-menu-ancestor{
+					&.current-menu-ancestor{
 						background-color: $hover-bkg;
 
 						a{
