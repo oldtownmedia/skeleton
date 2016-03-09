@@ -222,16 +222,6 @@ $hover-bkg: $aColor;
 	}
 }
 
-	@include mq( $tablet ){
-		.click-toggle-menu-off,
-		.offcanvas-nav,
-		.trigger{
-			display: none;
-			visibility: hidden;
-			opacity: 0;
-		}
-	}
-
 /**********************\
    Mobile Menu Trigger
 \**********************/
@@ -271,3 +261,15 @@ body{
 		}
 	}
 }
+
+	@include mq( $tablet ){
+		body.menu-shown .click-toggle-menu-off,
+		body.menu-shown .offcanvas-nav,
+		.click-toggle-menu-off,
+		.offcanvas-nav,
+		.trigger{
+			display: none;
+			visibility: hidden;
+			opacity: 0;
+		}
+	}

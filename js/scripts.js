@@ -27,47 +27,51 @@
 		 * screen for the full-size menu. i.e.: Initiante drop-down
 		 */
 
-		// detect touch
-		if('ontouchstart' in window || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
-		    document.documentElement.className += ' touch';
+		if ( $(window).innerWidth() > 700 ){
+
+			// detect touch
+			if('ontouchstart' in window || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
+			    document.documentElement.className += ' touch';
+			}
+
+			// touch counters
+			jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
+				jQuery(this).data('touch', 0);
+			});
+
+			jQuery('.touch .menu-item-has-children').on('click', function(){
+				jQuery(this).data('touch', jQuery(this).data('touch') + 1);
+				if(jQuery(this).data('touch') < 0){
+			        return false;
+			    }
+			});
+
+			jQuery('html').on('click', function(){
+				jQuery('.touch .menu-item-has-children').data('touch', 0);
+			});
+
+			// menu events
+			jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
+			    openMenu( jQuery(this) );
+			});
+
+			jQuery('.touch .menu-item-has-children').on('mouseleave', function(){
+			    closeMenu( jQuery(this) );
+			});
+
+			jQuery('.touch .menu-item-has-children').on('click', function(e){
+			    if(e.stopPropagation){
+			        e.stopPropagation();
+			    }else{
+			        e.cancelBubble = true;
+			    }
+			});
+
+			// Trigger events on load as a precaution
+			jQuery('.touch .menu-item-has-children').trigger('mouseenter');
+			jQuery('.touch .menu-item-has-children').trigger('mouseleave');
+
 		}
-
-		// touch counters
-		jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
-			jQuery(this).data('touch', 0);
-		});
-
-		jQuery('.touch .menu-item-has-children').on('click', function(){
-			jQuery(this).data('touch', jQuery(this).data('touch') + 1);
-			if(jQuery(this).data('touch') < 0){
-		        return false;
-		    }
-		});
-
-		jQuery('html').on('click', function(){
-			jQuery('.touch .menu-item-has-children').data('touch', 0);
-		});
-
-		// menu events
-		jQuery('.touch .menu-item-has-children').on('mouseenter', function(){
-		    openMenu( jQuery(this) );
-		});
-
-		jQuery('.touch .menu-item-has-children').on('mouseleave', function(){
-		    closeMenu( jQuery(this) );
-		});
-
-		jQuery('.touch .menu-item-has-children').on('click', function(e){
-		    if(e.stopPropagation){
-		        e.stopPropagation();
-		    }else{
-		        e.cancelBubble = true;
-		    }
-		});
-
-		// Trigger events on load as a precaution
-		jQuery('.touch .menu-item-has-children').trigger('mouseenter');
-		jQuery('.touch .menu-item-has-children').trigger('mouseleave');
 
 
 		/*
