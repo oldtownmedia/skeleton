@@ -8,19 +8,12 @@
 	// Colors
 
 
-	// Forms
-	$label-color: #000000;
-	$label-font: $aFont;
-	$field-color: #000000;
-	$field-font: $aFont;
-
 	// Breakpoints
 	$tablet: 700px;
 	$mid-width: 900px;
 	$full-width: 1200px;
 
-// Mixins
-
+	// Mixins
 	@mixin mq( $breakpoint ){
 		@media screen and ( min-width: $breakpoint ){
 			@content;
@@ -67,6 +60,10 @@
 
 }
 
+.banner{
+
+}
+
 .content{
 
 }
@@ -74,11 +71,11 @@
 	@include mq( $tablet ){
 
 		.main{
-
+			float: left;
 		}
 
 		.sidebar{
-
+			float: right;
 		}
 
 	}

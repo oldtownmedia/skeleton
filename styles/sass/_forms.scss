@@ -1,7 +1,19 @@
+// Default font styles
+$label-color: inherit;
+$label-font: inherit;
+$field-color: inherit;
+$field-font: inherit;
+
+$form-font-size: 1.1em;
+
+// Placeholders
+$placeholder-color: lighten( $field-color, 20% );
+$placeholder-highlight-color: lighten( $field-color, 60% );
+
 .content form{
 
     label{
-    	font: 500 18px/2em $label-font;
+    	font: 500 #{$form-font-size}/2em $label-font;
     	color: $label-color;
     }
 
@@ -12,10 +24,9 @@
 	.select2-choice,
     select,
     textarea{
-		font: 18px/2em $field-font;
+		font: #{$form-font-size}/2em $field-font;
 		color: $field-color;
 		padding: 0 10px;
-		-webkit-border-radius: 0;
 		border-radius: 0;
 		background: #ffffff;
 		border: 1px solid $field-color;
@@ -39,37 +50,37 @@
     }
 
     ::-webkit-input-placeholder {
-	   color: lighten( $field-color, 20% );
+	   color: $placeholder-color;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-	   color: lighten( $field-color, 20% );
+	   color: $placeholder-color;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-	   color: lighten( $field-color, 20% );
+	   color: $placeholder-color;
 	}
 
 	:-ms-input-placeholder {
-	   color: lighten( $field-color, 20% );
+	   color: $placeholder-color;
 	}
 
-	&:hover,
-	&:focus{
+	.ginput_container:hover,
+	.ginput_container:focus{
 		::-webkit-input-placeholder {
-		   color: lighten( $field-color, 60% );
+		   color: $placeholder-highlight-color;
 		}
 
 		:-moz-placeholder { /* Firefox 18- */
-		   color: lighten( $field-color, 60% );
+		   color: $placeholder-highlight-color;
 		}
 
 		::-moz-placeholder {  /* Firefox 19+ */
-		   color: lighten( $field-color, 60% );
+		   color: $placeholder-highlight-color;
 		}
 
 		:-ms-input-placeholder {
-		   color: lighten( $field-color, 60% );
+		   color: $placeholder-highlight-color;
 		}
 	}
 
