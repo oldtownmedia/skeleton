@@ -84,10 +84,10 @@ class ThemeIcons{
 
 		// If we have a link, insert it and otherwise insert an anchor tag (for
 		// consistency) but without the href.
-		if ( $icon_data['link'] ){
+		if ( isset( $icon_data['link'] ) ){
 			$html .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."' aria-label='".strtoupper( $icon_data['type'] )." link'>";
 		} else {
-			$html .= "<a class='".$icon_data['type']."' aria-label='".strtoupper( $icon_data['type'] )." link'>";
+			$html .= "<span class='".$icon_data['type']."' aria-label='".strtoupper( $icon_data['type'] )." icon'>";
 		}
 
 		// Get our icons unique paths & dimensions
@@ -104,7 +104,11 @@ class ThemeIcons{
 		// This is our main SVG used for presentation
 		$html .= '<svg class="icon icon-'.$icon_data['type'].'"><use xlink:href="#icon-'.$icon_data['type'] . $instance.'"></use></svg>';
 
-		$html .= "</a>";
+		if ( isset( $icon_data['link'] ) ){
+			$html .= "</a>";
+		} else {
+			$html .= "</span>";
+		}
 
 		// Return both hidden & visual SVGs
 		return $prehtml . $html;
