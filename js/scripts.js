@@ -96,7 +96,7 @@
 		        var s = jQuery( this ).find('#s');
 		        if (!s.val()) {
 		            e.preventDefault();
-		            alert('Your search is empty!');
+		            alert( themeInfo.searchStr );
 		            jQuery('#s').focus();
 		        }
 		    });

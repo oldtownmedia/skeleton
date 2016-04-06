@@ -99,6 +99,13 @@ function otm_theme_scripts(){
 	// Only add if we're on the front-end of the site.
 	if ( !is_admin() ){
 		wp_register_script( 'otm_theme', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), '' );
+
+		wp_localize_script( 'otm_theme', 'themeInfo', array(
+			'siteUrl'	=> site_url(),
+			'templaeDir'=> get_template_directory_uri(),
+			'searchStr'	=> __( 'Your search is empty!', 'otm-skeleton' )
+		) );
+
 		wp_enqueue_script( 'otm_theme' );
 	}
 
