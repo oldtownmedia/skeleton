@@ -24,11 +24,14 @@ add_action( 'login_head',  'evans_login_css' );
  */
 function otm_google_web_fonts(){
 
+	//Assign our fonts
 	$fonts 		= "Source+Sans+Pro";
 
-	$font_link	= '//fonts.googleapis.com/css?family=' . $fonts;
-	$font_link	= str_replace( ',', '%2C', $font_link );
-	$font_link .= '&subset=latin,latin-ext';
+	// Build our complete URL
+	$font_link = add_query_arg( array(
+	    'family'	=> urlencode( $fonts ),
+	    'subset'	=> urlencode( 'latin,latin-ext' ),
+	), '//fonts.googleapis.com/css' );
 
 	return $font_link;
 
