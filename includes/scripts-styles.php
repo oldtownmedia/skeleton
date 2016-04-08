@@ -5,7 +5,6 @@
  *
  * @package: skeleton
  */
-
 add_action( 'wp_enqueue_scripts', 'load_styles' );
 add_action( 'init', 'editor_styles' );
 add_filter( 'style_loader_tag', 'style_remove' );
@@ -20,7 +19,7 @@ add_action( 'login_head',  'evans_login_css' );
  * Builds the correct Google fonts call from a simple string of required fonts.
  * Change based on your needs - Source+Sans+Pro is here only as an example.
  *
- * @return compiled font link
+ * @return string compiled font link
  */
 function otm_google_web_fonts(){
 
@@ -44,6 +43,8 @@ function otm_google_web_fonts(){
  * We use a custom stylesheet so that we can keep the front-end script smaller
  * and more optimized and for better folder organization. The regular style.css
  * in the main directory only has required theme info.
+ *
+ * @see wp_register_style, wp_enqueue_style, wp_style_add_data
  */
 function load_styles(){
 
@@ -96,6 +97,8 @@ function style_remove( $tag ){
 
 /**
  * Load custom theme javascript.
+ *
+ * @see wp_register_script, wp_enqueue_script, wp_localize_script
  */
 function otm_theme_scripts(){
 
@@ -127,8 +130,8 @@ function otm_theme_scripts(){
  */
 function custom_jquery() {
 
-	// Make sure we're ONLY running this script on the front-end. Will cause issues
-	// in admin.
+	// Make sure we're ONLY running this script on the front-end. Will cause
+	// issues in admin if not checked.
 	if ( !is_admin() ) {
 
 		$version = '1.11.3';

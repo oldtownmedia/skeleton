@@ -8,7 +8,9 @@
 class ThemeDebugPage{
 
 	/**
-	 * Constructor function.
+	 * Hooks function to run all of our WP hooks.
+	 *
+	 * This serves as a pseudo-constructor, WP style.
 	 */
 	public function hooks(){
 
@@ -31,8 +33,6 @@ class ThemeDebugPage{
 			'theme-info',
 			array( $this, 'admin_page' )
 		);
-
-		//add_action( 'admin_print_styles-' . $page, array( $this, 'load_scripts' ) );
 
 	}
 

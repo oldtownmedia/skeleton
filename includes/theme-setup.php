@@ -11,9 +11,11 @@
 class ThemeSetup{
 
 	/**
-	 * Constructor function.
+	 * Hooks function to run all of our WP hooks.
+	 *
+	 * This serves as a pseudo-constructor, WP style.
 	 */
-	public function __construct(){
+	public function hooks(){
 
 		// Base Actions
 		add_action( 'after_setup_theme', array( $this, 'otm_theme_setup' ) );
@@ -90,3 +92,4 @@ class ThemeSetup{
 
 // Run our class by default
 $theme_setup = new ThemeSetup();
+$theme_setup->hooks();
