@@ -17,7 +17,7 @@ get_header(); ?>
             </header>
 
             <p>
-                Looks like something's not where it's supposed to be. You might try the mani menu to find what you need.
+                Looks like something's not where it's supposed to be. You might try the main menu to find what you need.
             </p>
 
         </div>

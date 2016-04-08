@@ -31,7 +31,7 @@
         <div class="logo" itemscope itemtype="http://schema.org/Organization">
 
             <a itemprop="url" href="<?php echo site_url(); ?>">
-            	<img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo get_bloginfo('name') ?>">
+            	<img itemprop="logo" src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="<?php echo esc_attr( get_bloginfo('name') ); ?>">
             </a>
 
         </div>

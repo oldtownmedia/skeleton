@@ -106,7 +106,7 @@ function otm_single_result() {
 		global $wp_query;
 
 		if ( $wp_query->post_count == 1 ) {
-			wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
+			wp_redirect( esc_url( get_permalink( $wp_query->posts['0']->ID ) ) );
 		}
 
 	}
