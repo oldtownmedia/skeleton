@@ -28,8 +28,8 @@ function otm_google_web_fonts(){
 
 	// Build our complete URL
 	$font_link = add_query_arg( array(
-	    'family'	=> urlencode( $fonts ),
-	    'subset'	=> urlencode( 'latin,latin-ext' ),
+	    'family'	=> $fonts,
+	    'subset'	=> 'latin,latin-ext',
 	), '//fonts.googleapis.com/css' );
 
 	return $font_link;

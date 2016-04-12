@@ -3,7 +3,6 @@
 \******************************/
 
 // Typographic resets
-
 body{
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -15,13 +14,16 @@ p{
 	margin: 10px 0;
 }
 
-h1, h2, h3, h4, h5{
+h1,
+h2,
+h3,
+h4,
+h5{
 	font-weight: 300;
 	margin: .3em 0;
 }
 
 // General table styling
-
 table{
 	border-collapse: collapse;
 	margin: 10px 0;
@@ -58,7 +60,6 @@ blockquote{
 }
 
 // Keep iframes from bumping outside of mobile views
-
 iframe,
 object{
 	max-width: 100%;
@@ -74,13 +75,11 @@ img{
 }
 
 // Smoother color transition for links
-
 a{
     transition: all 0.3s ease;
 }
 
 // Clear after container
-
 .content:after,
 .group:after{
 	content: "";
@@ -94,7 +93,6 @@ a{
 \***************************/
 
 // In-content image alignment
-
 .alignleft{
 	float: left;
 	margin-right: 20px;
@@ -138,7 +136,6 @@ a{
 }
 
 // Caption/gallery styling
-
 .wp-caption{
     background: #fff;
     border: 1px solid #cccccc;
@@ -157,18 +154,17 @@ a{
 }
 
 // Sticky post designation
-
 .sticky{
 	background: #f8f8f8;
 }
 
 // General nav link alignment
-
 .nav-links{
 	display: flex;
 	justify-content: space-between;
 }
 
-.content ul{
+.content ul,
+.content ol{
 	padding-left: 30px;
 }
