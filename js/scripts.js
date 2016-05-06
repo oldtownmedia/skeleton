@@ -91,16 +91,14 @@
 		/*
 		 * Prevent empty search field from being submitted
 		 */
-		jQuery(document).ready(function(){
-		    jQuery('.searchform').submit(function(e) {
-		        var s = jQuery( this ).find('#s');
-		        if (!s.val()) {
-		            e.preventDefault();
-		            alert( themeInfo.searchStr );
-		            jQuery('#s').focus();
-		        }
-		    });
-		});
+	    jQuery('.searchform').submit(function(e) {
+	        var s = jQuery( this ).find('#s');
+	        if (!s.val()) {
+	            e.preventDefault();
+	            alert( themeInfo.searchStr );
+	            jQuery('#s').focus();
+	        }
+	    });
 
 	});
 })( jQuery );

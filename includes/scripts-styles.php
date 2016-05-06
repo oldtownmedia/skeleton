@@ -134,7 +134,7 @@ function custom_jquery() {
 	// issues in admin if not checked.
 	if ( !is_admin() ) {
 
-		$version = '1.11.3';
+		$version = '1.12.0';
 
 		wp_deregister_script( 'jquery' );
 		wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js', false, $version, false );
