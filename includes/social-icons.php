@@ -85,9 +85,9 @@ class ThemeIcons{
 		// If we have a link, insert it and otherwise insert an anchor tag (for
 		// consistency) but without the href.
 		if ( isset( $icon_data['link'] ) ){
-			$html .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."' aria-label='".strtoupper( $icon_data['type'] )." link'>";
+			$html .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."' aria-label='".ucwords( $icon_data['type'] )." link'>";
 		} else {
-			$html .= "<span class='".$icon_data['type']."' aria-label='".strtoupper( $icon_data['type'] )." icon'>";
+			$html .= "<span class='".$icon_data['type']."' aria-label='".ucwords( $icon_data['type'] )." icon'>";
 		}
 
 		// Get our icons unique paths & dimensions
@@ -96,7 +96,7 @@ class ThemeIcons{
 		// Build a separate SVG object for reference only.
 		$html .= "<svg xmlns='http://www.w3.org/2000/svg' style='display: none;'>";
 			$html .= '<symbol id="icon-' . $icon_data['type'] . $instance.'" viewBox="0 0 '.$icon_paths['dimensions'].'">';
-				$html .= '<title>'.__( strtoupper( $icon_data['type'] ) . ' icon', 'otm-mu' ).'</title>';
+				$html .= '<title>'.__( ucwords( $icon_data['type'] ) . ' icon', 'otm-mu' ).'</title>';
 				$html .= $icon_paths['paths'];
 			$html .= '</symbol>';
 		$html .= "</svg>";
