@@ -29,7 +29,7 @@ get_header(); ?>
             $wp_query = null;
             $wp_query = new WP_Query();
             $wp_query->query( array(
-            	'showposts'	=> 5,
+            	'showposts'	=> absint( get_option( 'posts_per_page' ) ),
             	'paged'		=> $paged
             ) );
 
