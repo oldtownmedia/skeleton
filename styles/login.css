@@ -4,22 +4,22 @@
 
 /* Page background image */
 body.login{
-    background: url( "../images/bg.jpg" ) !important;
+    background: url( "../images/bg.jpg" );
 }
 
 /* Logo above form */
 .login h1 a{
-    background-image: url( "../images/logo.png" ) !important;
-    background-size: 302px 172px !important;
-    width: 302px !important;
-    height: 172px !important;
-    margin: auto !important;
+    background-image: url( "../images/logo.png" );
+    background-size: 302px 172px;
+    width: 302px;
+    height: 172px;
+    margin: auto;
     pointer-events: none;
 }
 
 /* Color of text below form */
 .login #nav a,
 .login #backtoblog a{
-    color: #1a3c33 !important;
-    text-shadow: none !important;
+    color: #1a3c33;
+    text-shadow: none;
 }
