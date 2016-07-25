@@ -108,7 +108,7 @@ function otm_theme_scripts(){
 
 		wp_localize_script( 'otm_theme', 'themeInfo', array(
 			'siteUrl'	=> site_url(),
-			'templaeDir'=> get_template_directory_uri(),
+			'templateDir'=> get_template_directory_uri(),
 			'searchStr'	=> __( 'Your search is empty!', 'otm-skeleton' )
 		) );
 
