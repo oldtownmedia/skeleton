@@ -1,9 +1,9 @@
 <?php
 
-/*
+/**
  * Resets unnecessary WordPress functionality or defaults.
  *
- * @package: skeleton
+ * @package skeleton
  */
 
 // Hooks for reset functions

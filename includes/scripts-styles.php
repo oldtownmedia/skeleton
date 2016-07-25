@@ -1,10 +1,10 @@
 <?php
-
-/*
+/**
  * Hooks for including styles, scripts, and fonts.
  *
- * @package: skeleton
+ * @package skeleton
  */
+
 add_action( 'wp_enqueue_scripts', 'load_styles' );
 add_action( 'init', 'editor_styles' );
 add_filter( 'style_loader_tag', 'style_remove' );

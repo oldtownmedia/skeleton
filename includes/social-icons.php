@@ -7,7 +7,7 @@
  * the theme. Icons are called as SVGs to avoid loading in an extra icon font
  * or images. Icons can easily be added into $this->icon_paths for more flexibility.
  *
- * @package: skeleton
+ * @package skeleton
  */
 
 class ThemeIcons{

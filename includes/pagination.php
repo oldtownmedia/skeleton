@@ -1,9 +1,8 @@
 <?php
-
-/*
+/**
  * Custom pagination functions & includes.
  *
- * @package: skeleton
+ * @package skeleton
  */
 
 /**
