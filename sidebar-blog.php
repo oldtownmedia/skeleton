@@ -11,7 +11,7 @@
 <div class="sidebar">
 	<aside>
 
-		<h2>Categories</h2>
+		<h2><?php echo esc_html_x( 'Categories', 'Blog sidebar title', 'otm-skeleton' ); ?></h2>
 
 		<ul class='categories'>
 			<?php

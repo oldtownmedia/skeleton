@@ -24,7 +24,7 @@ get_header(); ?>
 
             echo "</article>";
 
-			echo "<a href='" . esc_url( site_url( '/blog/' ) ) . "' class='button back' role='button'>Back to Blog</a>";
+			echo "<a href='" . esc_url( site_url( '/blog/' ) ) . "' class='button back' role='button'>" . esc_html_e( 'Back to Blog', 'otm-skeleton' ) . "</a>";
 
             endwhile; ?>
 

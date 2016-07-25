@@ -32,10 +32,12 @@ $search = new WP_Query( $search_query );
 		$title = preg_replace( '/( '.implode( '|', $keys ) .' )/iu', '<strong class="search-excerpt">\0</strong>', $title );
 
 			echo "<header>";
-	    		echo "<h1>Search Results for: " . esc_html( get_search_query() ) . "</h1>";
+	    		echo "<h1>";
+					printf( esc_html__( 'Search Results for: %s', 'otm-skeleton' ), get_search_query() );
+				echo "</h1>";
 			echo "</header>";
 
-			while ( have_posts()) : the_post();
+			while ( have_posts() ) : the_post();
 
 				get_template_part( 'content', 'post' );
 
@@ -45,9 +47,9 @@ $search = new WP_Query( $search_query );
 
             echo "<article>";
 
-				echo "<h1>Nothing Found</h1>";
+				echo "<h1>" . esc_html_e( 'Nothing Found', 'otm-skeleton' ) . "</h1>";
 
-				echo "<p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>";
+				echo "<p>" . esc_html_e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'otm-skeleton' ) . "</p>";
 
 			echo "</article>";
 

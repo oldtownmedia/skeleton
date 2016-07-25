@@ -13,11 +13,11 @@ get_header(); ?>
         <div class="main" role="main">
 
             <header>
-	            <h1>Oops! That page can't be found.</h1>
+	            <h1><?php esc_html_e( 'Oops! That page can\'t be found.', 'otm-skeleton' ); ?></h1>
             </header>
 
             <p>
-                Looks like something's not where it's supposed to be. You might try the main menu to find what you need.
+                <?php esc_html_e( 'Looks like something\'s not where it\'s supposed to be. You might try the main menu to find what you need.', 'otm-skeleton' ); ?>
             </p>
 
         </div>

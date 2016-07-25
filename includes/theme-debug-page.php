@@ -53,7 +53,7 @@ class ThemeDebugPage{
 		$sizes = array();
 
 		foreach ( get_intermediate_image_sizes() as $_size ) {
-			if ( in_array( $_size, array('thumbnail', 'medium', 'medium_large', 'large') ) ) {
+			if ( in_array( $_size, array( 'thumbnail', 'medium', 'medium_large', 'large' ) ) ) {
 				$sizes[ $_size ]['width']  = get_option( "{$_size}_size_w" );
 				$sizes[ $_size ]['height'] = get_option( "{$_size}_size_h" );
 				$sizes[ $_size ]['crop']   = (bool) get_option( "{$_size}_crop" );
@@ -93,10 +93,10 @@ class ThemeDebugPage{
 
 					$html .= "<thead>";
 						$html .= "<tr>";
-							$html .= "<td>ID</td>";
-							$html .= "<td>Width</td>";
-							$html .= "<td>Height</td>";
-							$html .= "<td>Hard Crop?</td>";
+							$html .= "<td>" . esc_html__( 'ID', 'otm-skeleton' ) . "</td>";
+							$html .= "<td>" . esc_html__( 'Width', 'otm-skeleton' ) . "</td>";
+							$html .= "<td>" . esc_html__( 'Height', 'otm-skeleton' ) . "</td>";
+							$html .= "<td>" . esc_html__( 'Hard crop?', 'otm-skeleton' ) . "</td>";
 						$html .= "</tr>\n";
 					$html .= "</thead>\n";
 
@@ -131,8 +131,8 @@ class ThemeDebugPage{
 
 					$html .= "<thead>\n";
 						$html .= "<tr>";
-							$html .= "<td>Name</td>";
-							$html .= "<td>Path</td>";
+							$html .= "<td>" . esc_html__( 'Name', 'otm-skeleton' ) . "</td>";
+							$html .= "<td>" . esc_html__( 'Path', 'otm-skeleton' ) . "</td>";
 						$html .= "</tr>\n";
 					$html .= "</thead>\n";
 
