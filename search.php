@@ -32,7 +32,7 @@ $search = new WP_Query( $search_query );
 		$title = preg_replace( '/( '.implode( '|', $keys ) .' )/iu', '<strong class="search-excerpt">\0</strong>', $title );
 
 			echo "<header>";
-	    		echo "<h1>Search Results for: ".get_search_query()."</h1>";
+	    		echo "<h1>Search Results for: " . esc_html( get_search_query() ) . "</h1>";
 			echo "</header>";
 
 			while ( have_posts()) : the_post();

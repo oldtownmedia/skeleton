@@ -80,10 +80,10 @@ class ThemeDebugPage{
 
 		$html .= '<div class="wrap" id="options_editor">' . "\n";
 
-			$html .= '<h2>' . __( 'Theme Information' , 'otm-skeleton' ) . '</h2>' . "\n";
+			$html .= '<h2>' . esc_html__( 'Theme Information' , 'otm-skeleton' ) . '</h2>' . "\n";
 
 			// Loop through all available image sizes
-			$html .= "<h3>".__( 'Image Sizes', 'otm-skeleton' )."</h3>\n";
+			$html .= "<h3>" . esc_html__( 'Image Sizes', 'otm-skeleton' ) . "</h3>\n";
 
 			$sizes = $this->get_image_sizes();
 
@@ -105,10 +105,10 @@ class ThemeDebugPage{
 					foreach ( $sizes as $size => $information ){
 
 						$html .= "<tr>";
-							$html .= "<td>$size</td>";
-							$html .= "<td>".$information['width']."</td>";
-							$html .= "<td>".$information['height']."</td>";
-							$html .= "<td>".$information['crop']."</td>";
+							$html .= "<td>" . esc_attr( $size ) . "</td>";
+							$html .= "<td>" . esc_attr( $information['width'] ) . "</td>";
+							$html .= "<td>" . esc_attr( $information['height'] ) . "</td>";
+							$html .= "<td>" . esc_attr( $information['crop'] ) . "</td>";
 						$html .= "</tr>\n";
 
 					}
@@ -121,7 +121,7 @@ class ThemeDebugPage{
 
 
 			// Loop through all template files
-			$html .= "<h3>".__( 'Available Page Templates', 'otm-skeleton' )."</h3>\n";
+			$html .= "<h3>" . esc_html__( 'Available Page Templates', 'otm-skeleton' ) . "</h3>\n";
 
 			$all_templates = wp_get_theme()->get_page_templates();
 
@@ -140,8 +140,8 @@ class ThemeDebugPage{
 
 					foreach ( $all_templates as $path => $name ){
 						$html .= "<tr>";
-							$html .= "<td>$name</td>";
-							$html .= "<td>$path</td>";
+							$html .= "<td>" . $name . "</td>";
+							$html .= "<td>" . $path . "</td>";
 						$html .= "</tr>\n";
 					}
 
@@ -155,7 +155,7 @@ class ThemeDebugPage{
 			$html .= "<h3>".__( 'Theme Errors', 'otm-skeleton' )."</h3>\n";
 
 			if ( ! file_exists( get_template_directory() . '/favicon.ico' ) ){
-				$html .= "<p class='error' style='color:red;'>".__( 'Missing favicon.ico', 'otm-skeleton' )."</p>";
+				$html .= "<p class='error' style='color:red;'>" . esc_html__( 'Missing favicon.ico', 'otm-skeleton' ) . "</p>";
 			}
 
 		echo $html;

@@ -7,7 +7,6 @@
  *
  * @package	skeleton
  */
-
 class ThemeSetup{
 
 	/**

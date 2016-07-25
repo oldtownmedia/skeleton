@@ -85,9 +85,9 @@ class ThemeIcons{
 		// If we have a link, insert it and otherwise insert an anchor tag (for
 		// consistency) but without the href.
 		if ( isset( $icon_data['link'] ) ){
-			$html .= "<a href='".$icon_data['link']."' target='_blank' class='".$icon_data['type']."' aria-label='".ucwords( $icon_data['type'] )." link'>";
+			$html .= "<a href='" . esc_url( $icon_data['link'] ) . "' target='_blank' class='"  . esc_attr( $icon_data['type'] ) . "' aria-label='" . esc_attr( ucwords( $icon_data['type'] ) ) . " link'>";
 		} else {
-			$html .= "<span class='".$icon_data['type']."' aria-label='".ucwords( $icon_data['type'] )." icon'>";
+			$html .= "<span class='" . esc_attr( $icon_data['type'] ) . "' aria-label='" . esc_attr( ucwords( $icon_data['type'] ) ) . " icon'>";
 		}
 
 		// Get our icons unique paths & dimensions
@@ -95,14 +95,24 @@ class ThemeIcons{
 
 		// Build a separate SVG object for reference only.
 		$html .= "<svg xmlns='http://www.w3.org/2000/svg' style='display: none;'>";
-			$html .= '<symbol id="icon-' . $icon_data['type'] . $instance.'" viewBox="0 0 '.$icon_paths['dimensions'].'">';
-				$html .= '<title>'.__( ucwords( $icon_data['type'] ) . ' icon', 'otm-mu' ).'</title>';
-				$html .= $icon_paths['paths'];
+			$html .= '<symbol id="icon-' . esc_attr( $icon_data['type'] . $instance ) . '" viewBox="0 0 ' . esc_attr( $icon_paths['dimensions'] ) . '">';
+				$html .= '<title>' . esc_html( ucwords( $icon_data['type'] ) ) . '</title>';
+				$html .= wp_kses( $icon_paths['paths'], array(
+					'path' => array(
+						'class'	=> array(),
+						'id'	=> array(),
+						'd'		=> array(),
+				    ),
+					'g' => array(
+						'class'	=> array(),
+						'id'	=> array(),
+					),
+				) );
 			$html .= '</symbol>';
 		$html .= "</svg>";
 
 		// This is our main SVG used for presentation
-		$html .= '<svg class="icon icon-'.$icon_data['type'].'"><use xlink:href="#icon-'.$icon_data['type'] . $instance.'"></use></svg>';
+		$html .= '<svg class="icon icon-' . esc_attr( $icon_data['type'] ) . '"><use xlink:href="#icon-' . esc_attr( $icon_data['type'] . $instance ) . '"></use></svg>';
 
 		if ( isset( $icon_data['link'] ) ){
 			$html .= "</a>";

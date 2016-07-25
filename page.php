@@ -17,7 +17,7 @@ get_header(); ?>
 	            echo "<article>";
 
 	            	echo "<header>";
-		                echo "<h1>".esc_attr( get_the_title() )."</h1>";
+		                echo "<h1>" . esc_html( get_the_title() )."</h1>";
 					echo "</header>";
 
 	                the_content();

@@ -49,15 +49,15 @@ function otm_google_web_fonts(){
 function load_styles(){
 
 	// Main stylesheet & Google fonts call
-	wp_register_style( 'style', get_template_directory_uri() . '/styles/main.css', array(), '', 'all' );
-	wp_register_style( 'fonts', otm_google_web_fonts(), array(), '1', 'all' );
+	wp_register_style( 'style', esc_url( get_template_directory_uri() . '/styles/main.css' ), array(), '', 'all' );
+	wp_register_style( 'fonts', esc_url( otm_google_web_fonts() ), array(), '1', 'all' );
 
 	// IE 8 Styles
-	wp_register_style( 'skeleton-ie8', get_template_directory_uri() . '/styles/ie8.css', array(), '', 'all' );
+	wp_register_style( 'skeleton-ie8', esc_url( get_template_directory_uri() . '/styles/ie8.css' ), array(), '', 'all' );
 	wp_style_add_data( 'skeleton-ie8', 'conditional', 'lte IE 8' );
 
 	// IE 9 Styles
-	wp_register_style( 'skeleton-ie9', get_template_directory_uri() . '/styles/ie9.css', array(), '', 'all' );
+	wp_register_style( 'skeleton-ie9', esc_url( get_template_directory_uri() . '/styles/ie9.css' ), array(), '', 'all' );
 	wp_style_add_data( 'skeleton-ie9', 'conditional', 'IE 9' );
 
 	// Enqueue everything
@@ -76,8 +76,8 @@ function load_styles(){
  */
 function editor_styles(){
 
-	add_editor_style( get_template_directory_uri() . '/styles/editor-styles.css' );
-    add_editor_style( otm_google_web_fonts() );
+	add_editor_style( esc_url( get_template_directory_uri() . '/styles/editor-styles.css' ) );
+    add_editor_style( esc_url( otm_google_web_fonts() ) );
 
 }
 
@@ -104,7 +104,7 @@ function otm_theme_scripts(){
 
 	// Only add if we're on the front-end of the site.
 	if ( !is_admin() ){
-		wp_register_script( 'otm_theme', get_template_directory_uri() . '/js/scripts.min.js', array( 'jquery' ), '' );
+		wp_register_script( 'otm_theme', esc_url( get_template_directory_uri() . '/js/scripts.min.js' ), array( 'jquery' ), '' );
 
 		wp_localize_script( 'otm_theme', 'themeInfo', array(
 			'siteUrl'	=> site_url(),
@@ -153,6 +153,6 @@ function custom_jquery() {
  */
 function evans_login_css() {
 
-	wp_enqueue_style( 'login_css', get_template_directory_uri() . '/styles/login.css' );
+	wp_enqueue_style( 'login_css', esc_url( get_template_directory_uri() . '/styles/login.css' ) );
 
 }

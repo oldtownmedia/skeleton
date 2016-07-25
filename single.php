@@ -17,14 +17,14 @@ get_header(); ?>
             echo "<article>";
 
             	echo "</header>";
-	                echo "<h1>".esc_attr( get_the_title() )."</h1>";
+	                echo "<h1>".esc_html( get_the_title() )."</h1>";
 				echo "</header>";
 
                 the_content();
 
             echo "</article>";
 
-			echo "<a href='".site_url( '/blog/' )."' class='button back' role='button'>Back to Blog</a>";
+			echo "<a href='" . esc_url( site_url( '/blog/' ) ) . "' class='button back' role='button'>Back to Blog</a>";
 
             endwhile; ?>
 

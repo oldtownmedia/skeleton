@@ -47,7 +47,7 @@ function otm_post_nav(){
 	$next     = get_adjacent_post( false, '', false );
 
 	// Only run if we have next or previous values.
-	if ( !$next && !$previous ){
+	if ( ! $next && ! $previous ){
 		return;
 	}
 
@@ -56,7 +56,7 @@ function otm_post_nav(){
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'otm-skeleton' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'otm-skeleton' ) );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link', 'otm-skeleton' ) );
 			?>
 		</div>
 	</nav>
