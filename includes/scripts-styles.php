@@ -52,10 +52,6 @@ function load_styles() {
 	wp_register_style( 'style', esc_url( get_template_directory_uri() . '/styles/main.css' ), array(), '', 'all' );
 	wp_register_style( 'fonts', esc_url( otm_google_web_fonts() ), array(), '1', 'all' );
 
-	// IE 8 Styles
-	wp_register_style( 'skeleton-ie8', esc_url( get_template_directory_uri() . '/styles/ie8.css' ), array(), '', 'all' );
-	wp_style_add_data( 'skeleton-ie8', 'conditional', 'lte IE 8' );
-
 	// IE 9 Styles
 	wp_register_style( 'skeleton-ie9', esc_url( get_template_directory_uri() . '/styles/ie9.css' ), array(), '', 'all' );
 	wp_style_add_data( 'skeleton-ie9', 'conditional', 'IE 9' );
