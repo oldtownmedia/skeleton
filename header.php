@@ -56,10 +56,10 @@
 
   		<?php
 
-	  	if ( is_front_page() ){
+	  	if ( is_front_page() ) {
   			if ( function_exists( 'soliloquy' ) ) { soliloquy( '25' ); }
   		} else {
-  			if ( get_the_post_thumbnail() != '' && !is_single() && !is_category() ){
+  			if ( get_the_post_thumbnail() != '' && !is_single() && !is_category() ) {
   	        	the_post_thumbnail();
   	        }
   		}

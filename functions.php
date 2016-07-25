@@ -5,6 +5,6 @@
  * @package: skeleton
  */
 
-foreach ( glob( TEMPLATEPATH . "/includes/*.php", GLOB_NOSORT ) as $filename ){
+foreach ( glob( TEMPLATEPATH . "/includes/*.php", GLOB_NOSORT ) as $filename ) {
     require_once $filename;
 }

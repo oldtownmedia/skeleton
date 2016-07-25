@@ -21,7 +21,7 @@ add_action( 'login_head',  'evans_login_css' );
  *
  * @return string compiled font link
  */
-function otm_google_web_fonts(){
+function otm_google_web_fonts() {
 
 	//Assign our fonts
 	$fonts 		= "Source+Sans+Pro";
@@ -46,7 +46,7 @@ function otm_google_web_fonts(){
  *
  * @see wp_register_style, wp_enqueue_style, wp_style_add_data
  */
-function load_styles(){
+function load_styles() {
 
 	// Main stylesheet & Google fonts call
 	wp_register_style( 'style', esc_url( get_template_directory_uri() . '/styles/main.css' ), array(), '', 'all' );
@@ -74,7 +74,7 @@ function load_styles(){
  *
  * @see add_editor_style
  */
-function editor_styles(){
+function editor_styles() {
 
 	add_editor_style( esc_url( get_template_directory_uri() . '/styles/editor-styles.css' ) );
     add_editor_style( esc_url( otm_google_web_fonts() ) );
@@ -88,7 +88,7 @@ function editor_styles(){
  * @param	string Enqueued stylesheet
  * @return	string Cleaned style tag
  */
-function style_remove( $tag ){
+function style_remove( $tag ) {
 
 	return preg_replace( '~\s+type=["\'][^"\']++["\']~', '', $tag );
 
@@ -100,10 +100,10 @@ function style_remove( $tag ){
  *
  * @see wp_register_script, wp_enqueue_script, wp_localize_script
  */
-function otm_theme_scripts(){
+function otm_theme_scripts() {
 
 	// Only add if we're on the front-end of the site.
-	if ( !is_admin() ){
+	if ( !is_admin() ) {
 		wp_register_script( 'otm_theme', esc_url( get_template_directory_uri() . '/js/scripts.min.js' ), array( 'jquery' ), '' );
 
 		wp_localize_script( 'otm_theme', 'themeInfo', array(

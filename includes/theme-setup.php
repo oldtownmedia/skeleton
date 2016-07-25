@@ -14,7 +14,7 @@ class ThemeSetup{
 	 *
 	 * This serves as a pseudo-constructor, WP style.
 	 */
-	public function hooks(){
+	public function hooks() {
 
 		// Base Actions
 		add_action( 'after_setup_theme', array( $this, 'otm_theme_setup' ) );
@@ -23,7 +23,7 @@ class ThemeSetup{
 		add_filter( 'image_size_names_choose', array( $this, 'my_small_size' ) );
 
 		// Register the theme max width
-		if ( ! isset( $content_width ) ){
+		if ( ! isset( $content_width ) ) {
 			$content_width = 1200;
 		}
 
@@ -32,7 +32,7 @@ class ThemeSetup{
 	/**
 	 * Setup default theme options.
 	 */
-	public function otm_theme_setup(){
+	public function otm_theme_setup() {
 
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
@@ -51,7 +51,7 @@ class ThemeSetup{
 	/**
 	 * Registers sidebars (only register main - add others through the Custom Sidebars Plugin).
 	 */
-	public function otm_register_sidebars(){
+	public function otm_register_sidebars() {
 
 		register_sidebar( array(
 			'name'          => __( 'Main Sidebar', 'otm-skeleton' ),
@@ -69,7 +69,7 @@ class ThemeSetup{
 	 * Register custom menus.
 	 * Header Menu is only default defined menu. Add more as needed.
 	 */
-	public function otm_register_menus(){
+	public function otm_register_menus() {
 
 		register_nav_menus( array(
 			'header-menu'	=> __( 'Header Menu', 'otm-skeleton' ),
@@ -82,7 +82,7 @@ class ThemeSetup{
 	*
 	* @return	array Modified image size name array
 	*/
-	public function my_small_size( $sizes ){
+	public function my_small_size( $sizes ) {
 		return array_merge( $sizes, array(
 			'small-no-crop'	=> __( 'Small no-crop' ),
 		) );

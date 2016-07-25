@@ -10,10 +10,10 @@
  * Display navigation to next/previous pages when applicable.
  * Used within single posts.
  */
-function otm_paging_nav(){
+function otm_paging_nav() {
 
 	// Only run if we have more than 1 page
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ){
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 
@@ -41,13 +41,13 @@ function otm_paging_nav(){
  * Display navigation to next/previous pages when applicable.
  * Used on post listing pages.
  */
-function otm_post_nav(){
+function otm_post_nav() {
 
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
 
 	// Only run if we have next or previous values.
-	if ( ! $next && ! $previous ){
+	if ( ! $next && ! $previous ) {
 		return;
 	}
 

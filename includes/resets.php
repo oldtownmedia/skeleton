@@ -35,7 +35,7 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
  * @param 	array Arguments for this particular menu
  * @return	array Modified list of argument
  */
-function my_wp_nav_menu_args( $args = '' ){
+function my_wp_nav_menu_args( $args = '' ) {
 
 	$args['container'] = false;
 	return $args;
@@ -49,7 +49,7 @@ function my_wp_nav_menu_args( $args = '' ){
  * @param	string original category tag
  * @return	string modified category tag
  */
-function remove_category_rel_from_category_list( $thelist ){
+function remove_category_rel_from_category_list( $thelist ) {
 
 	return str_replace( 'rel="category tag"', 'rel="tag"', $thelist );
 
@@ -62,7 +62,7 @@ function remove_category_rel_from_category_list( $thelist ){
  * @param	string original image tag
  * @return	string modified image tag
  */
-function remove_thumbnail_dimensions( $html ){
+function remove_thumbnail_dimensions( $html ) {
 
 	$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 	return $html;
@@ -73,7 +73,7 @@ function remove_thumbnail_dimensions( $html ){
 /**
  * Hide WordPress version # from prying eyes.
  */
-function remove_wp_version (){
+function remove_wp_version () {
 
 	return '';
 
@@ -84,11 +84,11 @@ function remove_wp_version (){
  * Disable image auto-linking.
  * Because it's the most annoying thing. Ever.
  */
-function imagelink_setup(){
+function imagelink_setup() {
 
 	$image_set = get_option( 'image_default_link_type' );
 
-	if ( $image_set !== 'none' ){
+	if ( $image_set !== 'none' ) {
 		update_option( 'image_default_link_type', 'none' );
 	}
 

@@ -21,16 +21,16 @@ class ThemeIcons{
 	 * @param	string Unique identifier for this set of icons
 	 * @return	string html assembly of icons
 	 */
-	public function assemble_icons( $icons = array(), $instance = '-base' ){
+	public function assemble_icons( $icons = array(), $instance = '-base' ) {
 		$html = '';
 
 		// Check that the data exists and is a proper array
-		if ( !is_array( $icons ) && empty( $icons ) ){
+		if ( !is_array( $icons ) && empty( $icons ) ) {
 			return;
 		}
 
 		// Loop through the icons and then fetch the HTML for each
-		foreach ( $icons as $icon ){
+		foreach ( $icons as $icon ) {
 
 			$html .= $this->build_icon( $icon, $instance );
 
@@ -50,10 +50,10 @@ class ThemeIcons{
 	 * @param	string Unique identifier for this set of icons
 	 * @return	string HTML assembly of icons
 	 */
-	public function single_icon( $icon = array(), $instance = '-base' ){
+	public function single_icon( $icon = array(), $instance = '-base' ) {
 
 		// Check that the data exists and is a proper array
-		if ( !is_array( $icon ) && empty( $icon ) ){
+		if ( !is_array( $icon ) && empty( $icon ) ) {
 			return;
 		}
 
@@ -73,18 +73,18 @@ class ThemeIcons{
 	 * @param	string Unique identifier for this set of icons
 	 * @return 	string html for each icon
 	 */
-	private function build_icon( $icon_data, $instance ){
+	private function build_icon( $icon_data, $instance ) {
 
 		$html = $prehtml = '';
 
 		// Check that the data exists and is a proper array
-		if ( !is_array( $icon_data ) && empty( $icon_data ) ){
+		if ( !is_array( $icon_data ) && empty( $icon_data ) ) {
 			return;
 		}
 
 		// If we have a link, insert it and otherwise insert an anchor tag (for
 		// consistency) but without the href.
-		if ( isset( $icon_data['link'] ) ){
+		if ( isset( $icon_data['link'] ) ) {
 			$html .= "<a href='" . esc_url( $icon_data['link'] ) . "' target='_blank' class='"  . esc_attr( $icon_data['type'] ) . "' aria-label='" . esc_attr( ucwords( $icon_data['type'] ) ) . " link'>";
 		} else {
 			$html .= "<span class='" . esc_attr( $icon_data['type'] ) . "' aria-label='" . esc_attr( ucwords( $icon_data['type'] ) ) . " icon'>";
@@ -114,7 +114,7 @@ class ThemeIcons{
 		// This is our main SVG used for presentation
 		$html .= '<svg class="icon icon-' . esc_attr( $icon_data['type'] ) . '"><use xlink:href="#icon-' . esc_attr( $icon_data['type'] . $instance ) . '"></use></svg>';
 
-		if ( isset( $icon_data['link'] ) ){
+		if ( isset( $icon_data['link'] ) ) {
 			$html .= "</a>";
 		} else {
 			$html .= "</span>";
@@ -133,11 +133,11 @@ class ThemeIcons{
 	 * @param 	array Icons to build HTML for
 	 * @return 	array SVG paths for each icon & dimension data
 	 */
-	private function icon_paths( $icon_data ){
+	private function icon_paths( $icon_data ) {
 
 		$icon = array();
 
-		switch( $icon_data['type'] ){
+		switch( $icon_data['type'] ) {
 
 			// Dropbox logo
 			case 'dropbox' :
@@ -287,7 +287,7 @@ class ThemeIcons{
 
 		}
 
-		if ( !isset( $icon['dimensions'] ) ){
+		if ( !isset( $icon['dimensions'] ) ) {
 			$icon['dimensions'] = '1024 1024';
 		}
 

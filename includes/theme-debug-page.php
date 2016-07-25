@@ -12,7 +12,7 @@ class ThemeDebugPage{
 	 *
 	 * This serves as a pseudo-constructor, WP style.
 	 */
-	public function hooks(){
+	public function hooks() {
 
 		add_action( 'admin_menu' , array( $this, 'add_menu_item' ) );
 
@@ -47,7 +47,7 @@ class ThemeDebugPage{
 	 *
 	 * @return array All sizes & info.
 	 */
-	private function get_image_sizes(){
+	private function get_image_sizes() {
 		global $_wp_additional_image_sizes;
 
 		$sizes = array();
@@ -74,7 +74,7 @@ class ThemeDebugPage{
 	/**
 	 * Print out our admin page with theme debug info
 	 */
-	public function admin_page(){
+	public function admin_page() {
 
 		$html = "";
 
@@ -87,7 +87,7 @@ class ThemeDebugPage{
 
 			$sizes = $this->get_image_sizes();
 
-			if ( !empty( $sizes ) ){
+			if ( !empty( $sizes ) ) {
 
 				$html .= "<table class='wp-list-table widefat striped plugins'>\n";
 
@@ -102,7 +102,7 @@ class ThemeDebugPage{
 
 					$html .= "<tbody>\n";
 
-					foreach ( $sizes as $size => $information ){
+					foreach ( $sizes as $size => $information ) {
 
 						$html .= "<tr>";
 							$html .= "<td>" . esc_attr( $size ) . "</td>";
@@ -125,7 +125,7 @@ class ThemeDebugPage{
 
 			$all_templates = wp_get_theme()->get_page_templates();
 
-			if ( !empty( $all_templates ) ){
+			if ( !empty( $all_templates ) ) {
 
 				$html .= "<table class='wp-list-table widefat striped plugins'>\n";
 
@@ -138,7 +138,7 @@ class ThemeDebugPage{
 
 					$html .= "<tbody>\n";
 
-					foreach ( $all_templates as $path => $name ){
+					foreach ( $all_templates as $path => $name ) {
 						$html .= "<tr>";
 							$html .= "<td>" . $name . "</td>";
 							$html .= "<td>" . $path . "</td>";
@@ -154,7 +154,7 @@ class ThemeDebugPage{
 			// Look for specific issues or errors
 			$html .= "<h3>".__( 'Theme Errors', 'otm-skeleton' )."</h3>\n";
 
-			if ( ! file_exists( get_template_directory() . '/favicon.ico' ) ){
+			if ( ! file_exists( get_template_directory() . '/favicon.ico' ) ) {
 				$html .= "<p class='error' style='color:red;'>" . esc_html__( 'Missing favicon.ico', 'otm-skeleton' ) . "</p>";
 			}
 
